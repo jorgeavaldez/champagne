@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend/
+      dockerfile: ./backend/Dockerfile
+    command: yarn start:debug
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+    depends_on:
+      - postgres
+    env_file:
+      - ./backend/.env
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    env_file:
+      - ./backend/.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: db
