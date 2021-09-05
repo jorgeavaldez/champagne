@@ -26,7 +26,7 @@ export async function initContract() {
 
   // Initializing Wallet based Account. It can work with NEAR testnet wallet that
   // is hosted at https://wallet.testnet.near.org
-  const wallet = new WalletConnection(near, "stemmy");
+  const wallet = new WalletConnection(near, "champagne");
 
   // Getting the Account ID. If still unauthorized, it's just empty string
   const accountId = wallet.getAccountId();

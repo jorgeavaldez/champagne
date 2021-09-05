@@ -1,7 +1,7 @@
 const CONTRACT_NAME =
   process.env.CONTRACT_NAME ||
   process.env.NEXT_PUBLIC_CONTRACT_NAME ||
-  "stemmy";
+  "champagne";
 
 export default function getConfig(env) {
   switch (env) {
