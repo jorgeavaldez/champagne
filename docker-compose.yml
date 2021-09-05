@@ -1,11 +1,11 @@
 version: '3.7'
 services:
-  backend:
-    container_name: backend
+  web:
+    container_name: web
     build:
-      context: ./backend/
-      dockerfile: ./backend/Dockerfile
-    command: yarn start:debug
+      context: ./
+      dockerfile: Dockerfile
+    command: yarn start
     ports:
       - 3000:3000
     volumes:
@@ -13,7 +13,7 @@ services:
     depends_on:
       - postgres
     env_file:
-      - ./backend/.env
+      - ./.env
 
   postgres:
     image: postgres:13

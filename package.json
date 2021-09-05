@@ -31,6 +31,8 @@
     "near-cli": "~1.6.0",
     "nodemon": "~2.0.3",
     "parcel-bundler": "~1.12.4",
+    "prisma": "^2.30.3",
+    "prisma-dbml-generator": "^0.7.0",
     "react-test-renderer": "~17.0.1",
     "shelljs": "~0.8.4",
     "typescript": "^4.4.2"
@@ -41,6 +43,7 @@
     "@ceramicnetwork/blockchain-utils-linking": "^1.1.2",
     "@ceramicnetwork/http-client": "^1.2.0",
     "@ceramicstudio/idx": "^0.12.1",
+    "@prisma/client": "^2.30.3",
     "dids": "^2.4.0",
     "framer-motion": "^4.1.17",
     "key-did-resolver": "^1.4.0",
