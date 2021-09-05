@@ -1,11 +1,10 @@
 version: '3.7'
 services:
   web:
-    container_name: web
     build:
       context: ./
       dockerfile: Dockerfile
-    command: yarn start
+    command: yarn next dev
     ports:
       - 3000:3000
     volumes:
@@ -17,12 +16,11 @@ services:
 
   postgres:
     image: postgres:13
-    container_name: postgres
     restart: always
     ports:
       - 5432:5432
     env_file:
-      - ./backend/.env
+      - ./.env
     volumes:
       - postgres:/var/lib/postgresql/data
 

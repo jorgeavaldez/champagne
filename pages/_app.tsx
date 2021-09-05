@@ -1,3 +1,5 @@
+import { Provider } from 'next-auth/client';
+
 import "../styles/global.css";
 import NearProvider from "../src/near/provider";
 import Navbar from "../src/components/Navbar";
@@ -6,14 +8,16 @@ import Layout from "../src/components/Layout";
 
 export default function App({ Component, pageProps }) {
   return (
-    <NearProvider>
-      <Navbar />
+    <Provider session={pageProps.session}>
+      <NearProvider>
+        <Navbar />
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
 
-      <Footer />
-    </NearProvider>
+        <Footer />
+      </NearProvider>
+    </Provider>
   );
 }

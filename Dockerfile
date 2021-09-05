@@ -11,7 +11,7 @@ RUN yarn prisma generate
 
 COPY . .
 
-RUN yarn build
+RUN yarn next build
 
 EXPOSE 3000
-CMD [ "yarn", "start:prod" ]
+CMD [ "yarn", "next", "dev" ]
