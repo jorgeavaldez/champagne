@@ -12,7 +12,7 @@ function LoginPage() {
 
   useEffect(() => {
     if (signedIn) {
-      router.replace('/dashboard');
+      router.replace('/');
     }
   }, [signedIn, router]);
 
@@ -21,7 +21,7 @@ function LoginPage() {
   };
 
   const onWatClick = () => {
-    login();
+    router.push('/wat');
   };
 
   return (

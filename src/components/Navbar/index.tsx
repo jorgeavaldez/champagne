@@ -1,32 +1,28 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useNear } from "../../near/hooks";
 import styles from "./Navbar.module.css";
 
-const headerBackgroundColors = [
-  'blue',
-  'magenta',
-  'green',
-];
+export default function Navbar() {
+  const router = useRouter();
+  const { logout } = useNear();
+  
+  const onLogoutClick = () => {
+    logout(() => {
+      router.reload();
+    });
+  };
 
-const randomColor = headerBackgroundColors[Math.floor(Math.random() * 3)];
-
-export default function Navbar({ title = "non fungible!" }) {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>
-        <div>
-          <h5 style={{ backgroundColor: randomColor }}>{ title }</h5>
-        </div>
-      </div>
-
       <div className={styles.buttons}>
+        <div className={styles.logout} onClick={onLogoutClick}>
+          <Link href="/">⁂ logout</Link>
+        </div>
 
-        <Link href="/profile">
-          <a>⁂ mint</a>
-        </Link>
+        <Link href="/">⁂ home</Link>
 
-        <Link href="/profile">
-          <a>⁂ profile</a>
-        </Link>
+        <Link href="/campaign/list">⁂ campaigns</Link>
       </div>
     </div>
   );

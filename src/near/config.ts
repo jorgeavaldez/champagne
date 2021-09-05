@@ -10,6 +10,7 @@ export default function getConfig(env) {
       return {
         networkId: "mainnet",
         nodeUrl: "https://rpc.mainnet.near.org",
+        ceramicUrl: null,
         contractName: CONTRACT_NAME,
         walletUrl: "https://wallet.near.org",
         helperUrl: "https://helper.mainnet.near.org",
@@ -20,6 +21,7 @@ export default function getConfig(env) {
       return {
         networkId: "testnet",
         nodeUrl: "https://rpc.testnet.near.org",
+        ceramicUrl: 'http://localhost:7007',
         contractName: CONTRACT_NAME,
         walletUrl: "https://wallet.testnet.near.org",
         helperUrl: "https://helper.testnet.near.org",
@@ -29,6 +31,7 @@ export default function getConfig(env) {
       return {
         networkId: "betanet",
         nodeUrl: "https://rpc.betanet.near.org",
+        ceramicUrl: null,
         contractName: CONTRACT_NAME,
         walletUrl: "https://wallet.betanet.near.org",
         helperUrl: "https://helper.betanet.near.org",
@@ -38,6 +41,7 @@ export default function getConfig(env) {
       return {
         networkId: "local",
         nodeUrl: "http://localhost:3030",
+        ceramicUrl: 'http://localhost:7007',
         keyPath: `${process.env.HOME}/.near/validator_key.json`,
         walletUrl: "http://localhost:4000/wallet",
         contractName: CONTRACT_NAME,
@@ -47,6 +51,7 @@ export default function getConfig(env) {
       return {
         networkId: "shared-test",
         nodeUrl: "https://rpc.ci-testnet.near.org",
+        ceramicUrl: null,
         contractName: CONTRACT_NAME,
         masterAccount: "test.near",
       };
@@ -54,6 +59,7 @@ export default function getConfig(env) {
       return {
         networkId: "shared-test-staging",
         nodeUrl: "https://rpc.ci-betanet.near.org",
+        ceramicUrl: null,
         contractName: CONTRACT_NAME,
         masterAccount: "test.near",
       };

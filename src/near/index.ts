@@ -1,6 +1,7 @@
 import { connect, Contract, keyStores, WalletConnection } from "near-api-js";
-import getConfig from "./config";
+import * as uint8arrays from 'uint8arrays';
 
+import getConfig from "./config";
 
 declare module "near-api-js" {
  class Contract {
@@ -25,14 +26,14 @@ export async function initContract() {
 
   // Initializing Wallet based Account. It can work with NEAR testnet wallet that
   // is hosted at https://wallet.testnet.near.org
-  const walletConnection = new WalletConnection(near, "stemmy");
+  const wallet = new WalletConnection(near, "stemmy");
 
   // Getting the Account ID. If still unauthorized, it's just empty string
-  const accountId = walletConnection.getAccountId();
+  const accountId = wallet.getAccountId();
 
   // Initializing our contract APIs by contract name and configuration
   const contract = new Contract(
-    walletConnection.account(),
+    wallet.account(),
     nearConfig.contractName,
     {
       // View methods are read only. They don't modify the state, but usually return some value.
@@ -43,10 +44,20 @@ export async function initContract() {
   );
 
   return {
-    connection: walletConnection,
-    accountId: accountId,
+    near,
+    wallet,
+    accountId,
     contract,
   };
+}
+
+// NOTE: for ceramic
+export async function getPublicKey(connection: WalletConnection, accountId) {
+  console.log(nearConfig.networkId);
+  const keyPair = await connection._keyStore.getKey(nearConfig.networkId, accountId);
+  const publicKey = keyPair.getPublicKey().toString();
+
+  return { keyPair, publicKey };
 }
 
 export function logout(connection, next) {
@@ -56,7 +67,7 @@ export function logout(connection, next) {
   next();
 }
 
-export function login(connection) {
+export function login(connection: WalletConnection) {
   // Allow the current app to make calls to the specified contract on the
   // user's behalf.
   // This works by creating a new access key for the user's account and storing

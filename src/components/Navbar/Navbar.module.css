@@ -1,101 +1,16 @@
-@-webkit-keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
 .container {
-  display: flex;
   border-bottom: 1px solid black;
-  width: 100%;
-  box-sizing: border-box;
-  height: 5vh;
-
-  position: sticky;
-  top: 0;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  overflow: hidden;
-  box-sizing: content-box;
-  background-image: url('./animated-squiggle.gif');
-}
-
-.title div {
-  display: inline-block;
-  white-space: nowrap;
-
-  box-sizing: content-box;
-  width: 100%;
-  padding-left: 100%;
-
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-name: ticker;
-  animation-name: ticker;
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-
-}
-
-.title div h5 {
-  display: inline-block;
-
-  background-color: magenta;
-  font-size: 16px;
-  padding: 0.3rem 0.8rem;
-  color: white;
-  margin: 0;
 }
 
 .buttons {
   display: flex;
-  width: 50%;
-  overflow: hidden;
-  box-sizing: content-box;
-  justify-content: flex-end;
 }
 
-.buttons a {
-  cursor: pointer;
-  font-family: 'Hanson';
-  background: white;
-  border: none;
-  border-left: 1px solid black;
-  height: 100%;
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  text-decoration: none;
+.buttons * {
+  margin: 1em 2em;
 }
 
-.buttons a:visited {
-  color: unset;
+.logout {
+  position: absolute;
+  right: 0;
 }

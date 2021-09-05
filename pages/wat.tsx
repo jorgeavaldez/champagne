@@ -1,18 +1,29 @@
+import { useNear } from "../src/near/hooks";
+
 function WatPage() {
+  const { signedIn, login } = useNear();
+
+  const onLoginClick = () => {
+    login();
+  };
+
   return (
     <main>
       <header>
-        <h1>near is a creator friendly blockchain network</h1>
-        <p>
-          Click below to get started!
-        </p>
+        <h1>near is a fast and friendly blockchain network</h1>
 
-        <p>
-          We'll go through onboarding here. For now, people can reserve a username and we'll set it up for them. They can claim it later and will need to deposit some NEAR.
-        </p>
+        {!signedIn && (
+          <>
+            <p>Click below to get started!</p>
+
+            <button onClick={onLoginClick}>connect</button>
+          </>
+        )}
+
+        {signedIn && <p>Looks like you're already signed in!</p>}
       </header>
     </main>
-  )
+  );
 }
 
 export default WatPage;
