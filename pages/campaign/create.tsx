@@ -7,6 +7,13 @@ export default function CampaignCreatePage() {
       <h1>create campaign</h1>
 
       {session && <p>Signed in as {session.user.name}</p>}
+          <button
+            onClick={() => {
+              signIn();
+            }}
+          >
+            sign in
+          </button>
       {!session && (
         <p>
           not signed in
