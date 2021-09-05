@@ -17,10 +17,10 @@ export default function Navbar() {
     <div className={styles.container}>
       <div className={styles.buttons}>
         <div className={styles.logout} onClick={onLogoutClick}>
-          <Link href="/">⁂ logout</Link>
+          ⁂ logout
         </div>
 
-        <Link href="/">⁂ home</Link>
+        <Link href="/" prefetch>⁂ home</Link>
 
         <Link href="/campaign/list">⁂ campaigns</Link>
       </div>

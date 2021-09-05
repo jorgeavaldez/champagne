@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { useNear } from "../src/near/hooks";
 
-function HomePage() {
-
+export default function HomePage() {
   const { signedIn, accountId, networkId } = useNear();
 
   return (
@@ -37,5 +36,3 @@ function HomePage() {
     </main>
   );
 }
-
-export default HomePage;
