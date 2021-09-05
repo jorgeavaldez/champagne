@@ -74,5 +74,5 @@ export function login(connection: WalletConnection) {
   // This works by creating a new access key for the user's account and storing
   // the private key in localStorage.
   // connection.requestSignIn(nearConfig.contractName);
-  connection.requestSignIn();
+  connection.requestSignIn(nearConfig.contractName);
 }
