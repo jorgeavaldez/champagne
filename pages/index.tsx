@@ -29,7 +29,7 @@ export default function HomePage() {
         <>
           <h2>come find your next source of inspiration</h2>
           <p style={{ textAlign: "center", marginTop: "2.5em" }}>
-            <Link href="/campaign/create">sign in</Link>
+            <Link href="/login">sign in</Link>
           </p>
         </>
       )}

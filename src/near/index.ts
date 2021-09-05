@@ -10,7 +10,8 @@ declare module "near-api-js" {
  }
 }
 
-const nearConfig = getConfig(process.env.NODE_ENV || "development");
+// const nearConfig = getConfig(process.env.NODE_ENV || "development");
+const nearConfig = getConfig("development");
 
 export async function initContract() {
   const near = await connect(
@@ -72,5 +73,6 @@ export function login(connection: WalletConnection) {
   // user's behalf.
   // This works by creating a new access key for the user's account and storing
   // the private key in localStorage.
-  connection.requestSignIn(nearConfig.contractName);
+  // connection.requestSignIn(nearConfig.contractName);
+  connection.requestSignIn();
 }

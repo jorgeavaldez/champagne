@@ -14,7 +14,8 @@ import { initContract, login as nearLogin, logout as nearLogout } from "./";
 // TODO: add idx stuff from ceramic to store campaign data
 // import { authenticate } from "../ceramic";
 
-const { networkId } = getConfig(process.env.NODE_ENV || 'development');
+// const { networkId } = getConfig(process.env.NODE_ENV || 'development');
+const { networkId } = getConfig('development');
 
 interface NearCtx {
   networkId: string | null;
