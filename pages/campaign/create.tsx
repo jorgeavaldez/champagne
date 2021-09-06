@@ -1,7 +1,15 @@
 import { signIn, signOut, useSession } from "next-auth/client";
+import { useForm } from "react-hook-form";
 
 export default function CampaignCreatePage() {
   const [session] = useSession();
+  const { handleSubmit, register, formState: { errors } } = useForm();
+
+  const onFormSubmit = (values) => {
+    // TODO: initiate creation of contracts on the backend
+    console.log('values', values);
+  };
+
   return (
     <main>
       <h1>create campaign</h1>
@@ -14,6 +22,7 @@ export default function CampaignCreatePage() {
           >
             sign in
           </button>
+
       {!session && (
         <p>
           not signed in
@@ -26,6 +35,10 @@ export default function CampaignCreatePage() {
           </button>
         </p>
       )}
+
+      <form onSubmit={handleSubmit(onFormSubmit)}>
+
+      </form>
     </main>
   );
 }

@@ -53,6 +53,7 @@
     "next-auth": "^3.29.0",
     "react": "~17.0.1",
     "react-dom": "~17.0.1",
+    "react-hook-form": "^7.15.0",
     "regenerator-runtime": "~0.13.5",
     "uint8arrays": "^3.0.0"
   },
