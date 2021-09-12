@@ -24,6 +24,7 @@ export default function Sidebar() {
     return (
         <Navbar bg="dark" variant="dark" expand="lg" className={styles.sidebar}>
             <Container className="flex-column h-100">
+
                 {/* TODO: add login user name and link to wallet */}
                 <Navbar.Brand>
                     <Button variant="dark" className="w-100" onClick={goToNearWallet}>
