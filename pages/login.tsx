@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useNear } from "../src/near/hooks";
 
+import { Row, Col, Button } from 'react-bootstrap';
+
+import AdminLayout from '../src/components/AdminLayout';
+
 function LoginPage() {
   const router = useRouter();
 
@@ -25,15 +29,17 @@ function LoginPage() {
   };
 
   return (
-    <main>
-      <header>
-        <h2>let's get started</h2>
-        <p>first you'll need to log in to your near wallet</p>
-      </header>
+    <AdminLayout>
+      <Row className="pt-5">
+        <Col className="d-flex justify-content-center align-items-center">
+          <Button onClick={onLoginClick}>Connect</Button>
+        </Col>
+        <Col className="d-flex justify-content-center align-items-center">
+          <Button onClick={onWatClick}>What is near?</Button>
+        </Col>
+      </Row>
+    </AdminLayout>
 
-      <button onClick={onLoginClick}>connect</button>
-      <button onClick={onWatClick}>what's a near?</button>
-    </main>
   );
 }
 

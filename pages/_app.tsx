@@ -17,13 +17,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <Provider session={pageProps.session}>
         <NearProvider>
-          <Navbar />
-
-          <Layout>
             <Component {...pageProps} />
-          </Layout>
-
-          <Footer />
         </NearProvider>
       </Provider>
     </>
