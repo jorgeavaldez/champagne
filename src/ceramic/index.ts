@@ -56,7 +56,6 @@ export async function authenticate(nearKeyInstance: KeyPair, accountId) {
 
   console.log(accountId);
   try {
-    // TODO: add aliases here for twitter
     const threeIdConnect = new ThreeIdConnect();
     const authProvider = new NearAuthProvider(nearProvider, accountId, "testnet");
     await threeIdConnect.setAuthProvider(authProvider)
