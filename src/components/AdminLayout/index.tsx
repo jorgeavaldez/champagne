@@ -1,5 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
+
 import Sidebar from '../SideNav';
+import AdminHeader from '../AdminHeader';
 
 import styles from "./AdminLayout.module.css";
 
@@ -11,6 +13,7 @@ export default function Layout({ children }) {
                     <Sidebar />
                 </Col>
                 <Col lg={10} id="page-content-wrapper">
+                    <AdminHeader/>
                     {children}
                 </Col>
             </Row>

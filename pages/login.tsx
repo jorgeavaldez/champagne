@@ -4,6 +4,7 @@ import { useNear } from "../src/near/hooks";
 
 import { Row, Col, Button } from 'react-bootstrap';
 
+import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
 
 function LoginPage() {
@@ -29,17 +30,18 @@ function LoginPage() {
   };
 
   return (
-    <AdminLayout>
-      <Row className="pt-5">
-        <Col className="d-flex justify-content-center align-items-center">
-          <Button onClick={onLoginClick}>Connect</Button>
-        </Col>
-        <Col className="d-flex justify-content-center align-items-center">
-          <Button onClick={onWatClick}>What is near?</Button>
-        </Col>
-      </Row>
-    </AdminLayout>
-
+    <Layout>
+      <AdminLayout>
+        <Row className="pt-5">
+          <Col className="d-flex justify-content-center align-items-center">
+            <Button onClick={onLoginClick}>Connect</Button>
+          </Col>
+          <Col className="d-flex justify-content-center align-items-center">
+            <Button onClick={onWatClick}>What is near?</Button>
+          </Col>
+        </Row>
+      </AdminLayout>
+    </Layout>
   );
 }
 
