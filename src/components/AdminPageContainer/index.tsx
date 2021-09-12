@@ -13,11 +13,11 @@ export default function AdminPageContainer({ title, children }) {
             </Row>
 
             <Row className={`w-100 ${styles.body}`}>
-                <Col className="d-flex flex-column justify-content-center">
+                <Col className="p-0 m-0">
                     {children}
                 </Col>
             </Row>
-            
+
         </Container>
     )
 }

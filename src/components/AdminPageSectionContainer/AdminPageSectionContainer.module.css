@@ -1,0 +1,13 @@
+.box{
+    padding: 0 8px;
+}
+
+.title{
+    color: #000000;
+}
+
+.body{
+    padding: 32px;
+    min-height: 10vh;
+    background-color: #000000;
+}

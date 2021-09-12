@@ -6,6 +6,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 
 import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
+import AdminPageContainer from "../src/components/AdminPageSectionContainer";
 
 function LoginPage() {
   const router = useRouter();
@@ -32,14 +33,16 @@ function LoginPage() {
   return (
     <Layout>
       <AdminLayout>
-        <Row className="pt-5">
-          <Col className="d-flex justify-content-center align-items-center">
-            <Button onClick={onLoginClick}>Connect</Button>
-          </Col>
-          <Col className="d-flex justify-content-center align-items-center">
-            <Button onClick={onWatClick}>What is near?</Button>
-          </Col>
-        </Row>
+        <AdminPageContainer title="Logged In">
+          <Row className="w-100">
+            <Col className="d-flex justify-content-center align-items-center">
+              <Button onClick={onLoginClick}>Connect</Button>
+            </Col>
+            <Col className="d-flex justify-content-center align-items-center">
+              <Button onClick={onWatClick}>What is near?</Button>
+            </Col>
+          </Row>
+        </AdminPageContainer>
       </AdminLayout>
     </Layout>
   );
