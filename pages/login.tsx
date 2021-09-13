@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useNear } from "../src/near/hooks";
 
@@ -8,6 +8,7 @@ import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
 import AdminPageContainer from "../src/components/AdminPageSectionContainer";
 import CampaignCard from "../src/components/CampaignCard";
+import FormModal from '../src/components/FormModal';
 
 function LoginPage() {
   const router = useRouter();
@@ -27,9 +28,15 @@ function LoginPage() {
     login();
   };
 
-  const onWatClick = () => {
-    router.push('/wat');
+  const [schedulePostOpen, setSchedulePostOpen] = useState(false);
+
+  const onOpenSchedulePost = () => {
+    setSchedulePostOpen(true);
   };
+
+  const onCloseSchedulePost = () => {
+    setSchedulePostOpen(false);
+  }
 
   var campaign = {
     name: "Twitter", 
@@ -41,6 +48,7 @@ function LoginPage() {
 
   return (
     <Layout>
+      {schedulePostOpen && <FormModal open={schedulePostOpen} close={onCloseSchedulePost} />}
       <AdminLayout>
 
         {/* TODO: delete this probabaly */}
@@ -50,7 +58,7 @@ function LoginPage() {
               <Button onClick={onLoginClick}>Connect</Button>
             </Col>
             <Col className="d-flex justify-content-center align-items-center">
-              <Button onClick={onWatClick}>What is near?</Button>
+              <Button onClick={onOpenSchedulePost}>Schedule Post</Button>
             </Col>
           </Row>
         </AdminPageContainer>
