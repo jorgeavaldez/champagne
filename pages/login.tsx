@@ -31,12 +31,12 @@ function LoginPage() {
     router.push('/wat');
   };
 
-  const campaign = {
-    name: "Instagram", 
+  var campaign = {
+    name: "Twitter", 
     reward: "Near Tokens",
     startDate: "09/01/21",
     endDate: "09/06/21",
-    status: "active"
+    status: "created", 
   }
 
   return (
