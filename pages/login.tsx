@@ -6,9 +6,9 @@ import { Row, Col, Button } from 'react-bootstrap';
 
 import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
-import AdminPageContainer from "../src/components/AdminPageSectionContainer";
+import AdminPageSectionContainer from "../src/components/AdminPageSectionContainer";
 import CampaignCard from "../src/components/CampaignCard";
-import FormModal from '../src/components/FormModal';
+import SchedulePostModal from '../src/components/SchedulePostModal';
 
 function LoginPage() {
   const router = useRouter();
@@ -38,7 +38,7 @@ function LoginPage() {
     setSchedulePostOpen(false);
   }
 
-  var campaign = {
+  const campaign = {
     name: "Twitter", 
     reward: "Near Tokens",
     startDate: "09/01/21",
@@ -48,11 +48,11 @@ function LoginPage() {
 
   return (
     <Layout>
-      {schedulePostOpen && <FormModal open={schedulePostOpen} close={onCloseSchedulePost} />}
-      <AdminLayout>
+      {schedulePostOpen && <SchedulePostModal open={schedulePostOpen} close={onCloseSchedulePost} />}
+      <AdminLayout title="Logged In">
 
         {/* TODO: delete this probabaly */}
-        <AdminPageContainer title="Logged In">
+        <AdminPageSectionContainer title="Logged In">
           <Row className="w-100">
             <Col className="d-flex justify-content-center align-items-center">
               <Button onClick={onLoginClick}>Connect</Button>
@@ -61,14 +61,14 @@ function LoginPage() {
               <Button onClick={onOpenSchedulePost}>Schedule Post</Button>
             </Col>
           </Row>
-        </AdminPageContainer>
+        </AdminPageSectionContainer>
 
 
-        <AdminPageContainer title="My Campaigns">
+        <AdminPageSectionContainer title="My Campaigns">
           <Row className="w-100">
               <CampaignCard campaign={campaign}/>
            </Row>
-        </AdminPageContainer>
+        </AdminPageSectionContainer>
 
       </AdminLayout>
     </Layout>

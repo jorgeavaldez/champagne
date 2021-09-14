@@ -6,7 +6,7 @@ import MobileNav from '../MobileNav';
 import AdminHeader from '../AdminHeader';
 import AdminPageContainer from "../AdminPageContainer";
 
-export default function Layout({ children }) {
+export default function Layout({ title, children }) {
 
     const isSmallerThanIpad = useMediaQuery({ query: '(max-width: 768px)' });
 
@@ -16,7 +16,7 @@ export default function Layout({ children }) {
                 {isSmallerThanIpad ? <MobileNav/> : <Col lg={2} id="sidebar-wrapper"><Sidebar/> </Col>}
                 <Col lg={10} md={12} id="page-content-wrapper" className="mt-lg-0 mt-3">
                     {!isSmallerThanIpad && <AdminHeader />}
-                    <AdminPageContainer title="Welcome Back">
+                    <AdminPageContainer title={title}>
                         {children}
                     </AdminPageContainer>
                 </Col>

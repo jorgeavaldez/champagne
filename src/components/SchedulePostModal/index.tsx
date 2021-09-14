@@ -1,9 +1,9 @@
 import { Modal, Form, Row, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-import styles from './FormModal.module.css';
+import styles from './SchedulePostModal.module.css';
 
-export default function FormModal({ open, close }) {
+export default function SchedulePostModal({ open, close }) {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -22,7 +22,8 @@ export default function FormModal({ open, close }) {
 
                 <Modal.Body>
 
-                    {/* TODO: autopopulate based on what campaign is selected */}
+                    {/* TODO: autopopulate based on what campaign is selected for testing */}
+                    {/* !!: Remove this when we get campaing autopopulate field to work */}
                     <Form.Label className={styles.label}>Campaign</Form.Label>
                     {/* register your input into the hook by invoking the "register" function */}
                     <Form.Control defaultValue="Campaign" {...register("campaign", { required: true })} />
