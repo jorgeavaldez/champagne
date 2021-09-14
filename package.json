@@ -45,6 +45,7 @@
     "@ceramicstudio/idx": "^0.12.1",
     "@next-auth/prisma-adapter": "^0.5.4",
     "@prisma/client": "^2.30.3",
+    "bootstrap": "^5.0.0-beta3",
     "dids": "^2.4.0",
     "framer-motion": "^4.1.17",
     "key-did-resolver": "^1.4.0",
