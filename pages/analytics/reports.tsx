@@ -6,6 +6,7 @@ import AdminPageSectionContainer from "../../src/components/AdminPageSectionCont
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
 import CampaignCard from '../../src/components/CampaignCard';
+import StatsContainer from '../../src/components/StatsContainer';
 
 const campaigns = [
     {
@@ -45,6 +46,25 @@ const posts = [
     },
 ]
 
+const statsData = [
+    {
+        label: "Followers Gained",
+        data: "25"
+    },
+    {
+        label: "Total Number of Interactions",
+        data: "1800"
+    },
+    {
+        label: "Total Number of Camapigns",
+        data: "3"
+    },
+    {
+        label: "Number of Leads",
+        data: "7"
+    }
+]
+
 function Reports() {
     return (
         <Layout>
@@ -54,6 +74,7 @@ function Reports() {
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Running Total">
                             <Col lg={12} className="w-100">
+                                <StatsContainer data={statsData}/>
                             </Col>
                         </AdminPageSectionContainer>
                     </Col>

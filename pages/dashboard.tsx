@@ -8,9 +8,33 @@ import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
 import AdminPageSectionContainer from "../src/components/AdminPageSectionContainer";
 import CampaignCard from "../src/components/CampaignCard";
-import SchedulePostModal from '../src/components/SchedulePostModal';
+import StatsContainer from "../src/components/StatsContainer";
 
-function LoginPage() {
+const statsData = [
+  {
+    label: "Total # of leads",
+    data: "7"
+  },
+  {
+    label: "Top Post",
+    data: "Start NFT Campaign"
+  },
+  {
+    label: "Top Campaign",
+    data: "NFT Camapign"
+  },
+]
+
+const campaign = {
+  name: "Twitter",
+  reward: "Near Tokens",
+  startDate: "09/01/21",
+  endDate: "09/06/21",
+  status: "created",
+}
+
+
+function Dashboard() {
   const router = useRouter();
 
   const {
@@ -23,27 +47,8 @@ function LoginPage() {
     }
   }, [signedIn, router]);
 
-  const [schedulePostOpen, setSchedulePostOpen] = useState(false);
-
-  const onOpenSchedulePost = () => {
-    setSchedulePostOpen(true);
-  };
-
-  const onCloseSchedulePost = () => {
-    setSchedulePostOpen(false);
-  }
-
-  const campaign = {
-    name: "Twitter",
-    reward: "Near Tokens",
-    startDate: "09/01/21",
-    endDate: "09/06/21",
-    status: "created",
-  }
-
   return (
     <Layout>
-      {schedulePostOpen && <SchedulePostModal open={schedulePostOpen} close={onCloseSchedulePost} />}
       <AdminLayout title="Welcome Back">
         <Row className='w-100'>
 
@@ -51,7 +56,7 @@ function LoginPage() {
             {/* TODO: delete this probabaly */}
             <AdminPageSectionContainer title="While you were away">
               <Row className="w-100">
-
+                <StatsContainer data={statsData} />
               </Row>
             </AdminPageSectionContainer>
           </Col>
@@ -70,4 +75,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default Dashboard;

@@ -1,0 +1,12 @@
+.label{
+    color:white;
+}
+
+.data{
+    color: white;
+}
+
+.flexContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

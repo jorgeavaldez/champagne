@@ -6,6 +6,7 @@ import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
+import StatsContainer from '../../src/components/StatsContainer';
 
 const campaign = {
     name: "Twitter",
@@ -36,6 +37,21 @@ const posts = [
     },
 ]
 
+const statsData = [
+    {
+        label: "Total Number of Leads",
+        data: "7"
+    },
+    {
+        label: "Top Post",
+        data: "Start NFT Campaign"
+    },
+    {
+        label: "Number of Interactions",
+        data: "145"
+    },
+]
+
 function CampaignViewPage() {
 
     const router = useRouter();
@@ -56,6 +72,7 @@ function CampaignViewPage() {
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Running Total">
                             <Row className="w-100">
+                                <StatsContainer data={statsData}/>
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>
