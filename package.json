@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "yarn build:contract && yarn build:web",
-    "build:contract": "node contract/compile.js",
-    "build:contract:debug": "node contract/compile.js --debug",
+    "build:contract": "node compile.js",
+    "build:contract:debug": "node compile.js --debug",
     "build:web": "next build",
     "dev:deploy:contract": "near dev-deploy",
     "deploy:contract": "near deploy",

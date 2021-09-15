@@ -1,0 +1,3 @@
+[submodule "contracts.near-linkdrop"]
+	path = contracts.near-linkdrop
+	url = git@github.com:jorgeavaldez/contracts.near-linkdrop.git
