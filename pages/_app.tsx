@@ -1,4 +1,5 @@
 import { Provider } from 'next-auth/client';
+import Head from "next/head";
 
 import 'bootstrap/dist/css/bootstrap.css'
 import "../styles/global.css";
@@ -10,16 +11,15 @@ import Layout from "../src/components/Layout";
 
 export default function App({ Component, pageProps }) {
   return (
-    <Provider session={pageProps.session}>
-      <NearProvider>
-        <Navbar />
-
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-
-        <Footer />
-      </NearProvider>
-    </Provider>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Provider session={pageProps.session}>
+        <NearProvider>
+            <Component {...pageProps} />
+        </NearProvider>
+      </Provider>
+    </>
   );
 }

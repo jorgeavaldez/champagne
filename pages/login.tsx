@@ -1,6 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useNear } from "../src/near/hooks";
+
+import { Row, Col, Button } from 'react-bootstrap';
+
+import Layout from '../src/components/Layout';
+import AdminLayout from '../src/components/AdminLayout';
+import AdminPageSectionContainer from "../src/components/AdminPageSectionContainer";
+import CampaignCard from "../src/components/CampaignCard";
+import SchedulePostModal from '../src/components/SchedulePostModal';
 
 function LoginPage() {
   const router = useRouter();
@@ -20,20 +28,50 @@ function LoginPage() {
     login();
   };
 
-  const onWatClick = () => {
-    router.push('/wat');
+  const [schedulePostOpen, setSchedulePostOpen] = useState(false);
+
+  const onOpenSchedulePost = () => {
+    setSchedulePostOpen(true);
   };
 
-  return (
-    <main>
-      <header>
-        <h2>let's get started</h2>
-        <p>first you'll need to log in to your near wallet</p>
-      </header>
+  const onCloseSchedulePost = () => {
+    setSchedulePostOpen(false);
+  }
 
-      <button onClick={onLoginClick}>connect</button>
-      <button onClick={onWatClick}>what's a near?</button>
-    </main>
+  const campaign = {
+    name: "Twitter", 
+    reward: "Near Tokens",
+    startDate: "09/01/21",
+    endDate: "09/06/21",
+    status: "created", 
+  }
+
+  return (
+    <Layout>
+      {schedulePostOpen && <SchedulePostModal open={schedulePostOpen} close={onCloseSchedulePost} />}
+      <AdminLayout title="Logged In">
+
+        {/* TODO: delete this probabaly */}
+        <AdminPageSectionContainer title="Logged In">
+          <Row className="w-100">
+            <Col className="d-flex justify-content-center align-items-center">
+              <Button onClick={onLoginClick}>Connect</Button>
+            </Col>
+            <Col className="d-flex justify-content-center align-items-center">
+              <Button onClick={onOpenSchedulePost}>Schedule Post</Button>
+            </Col>
+          </Row>
+        </AdminPageSectionContainer>
+
+
+        <AdminPageSectionContainer title="My Campaigns">
+          <Row className="w-100">
+              <CampaignCard campaign={campaign}/>
+           </Row>
+        </AdminPageSectionContainer>
+
+      </AdminLayout>
+    </Layout>
   );
 }
 
