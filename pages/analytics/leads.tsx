@@ -12,17 +12,27 @@ function Leads() {
             <AdminLayout title="Leads">
 
                 <Row className='w-100'>
-                    <Col lg={12}>
+
+                    {/* TODO: If we can get metric data add this back in */}
+
+                    {/* <Col lg={12}>
                         <AdminPageSectionContainer title="Top Metrics">
                             <Row className="w-100">
                             </Row>
+                        </AdminPageSectionContainer>
+                    </Col> */}
+
+                    <Col lg={12}>
+                        <AdminPageSectionContainer title="Running Total">
+                            <Col lg={12} className="w-100">
+                            </Col>
                         </AdminPageSectionContainer>
                     </Col>
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="All Leads">
                             <Row className="w-100">
-                                <LeadsTable/>
+                                <LeadsTable />
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>

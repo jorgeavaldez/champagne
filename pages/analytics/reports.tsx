@@ -5,6 +5,7 @@ import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
+import CampaignCard from '../../src/components/CampaignCard';
 
 const campaigns = [
     {
@@ -57,16 +58,19 @@ function Reports() {
                         </AdminPageSectionContainer>
                     </Col>
 
-                    <Col lg={12}>
+                    {/* TODO: If we can get metric data add this back in */}
+
+                    {/* <Col lg={12}>
                         <AdminPageSectionContainer title="Key Metrics">
                             <Row className="w-100">
                             </Row>
                         </AdminPageSectionContainer>
-                    </Col>
+                    </Col> */}
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Campaigns">
                             <Row className="w-100">
+                                {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>

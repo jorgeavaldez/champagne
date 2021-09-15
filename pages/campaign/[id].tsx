@@ -38,8 +38,8 @@ const posts = [
 
 function CampaignViewPage() {
 
-  const router = useRouter();
-  const { id } = router.query;
+    const router = useRouter();
+    const { id } = router.query;
 
     return (
         <Layout>
@@ -60,17 +60,19 @@ function CampaignViewPage() {
                         </AdminPageSectionContainer>
                     </Col>
 
-                    <Col lg={12}>
+                    {/* TODO: If we can get metric data add this back in */}
+
+                    {/* <Col lg={12}>
                         <AdminPageSectionContainer title="Key Metrics">
                             <Row className="w-100">
                             </Row>
                         </AdminPageSectionContainer>
-                    </Col>
+                    </Col> */}
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Posts">
                             <Col className="w-100 d-flex flex-row">
-                                {posts.map(post => <PostCard post={post}/>)}
+                                {posts.map(post => <PostCard post={post} />)}
                             </Col>
                         </AdminPageSectionContainer>
                     </Col>
@@ -78,7 +80,7 @@ function CampaignViewPage() {
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Fans">
                             <Row className="w-100">
-                                <FansTable/>
+                                <FansTable />
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>
