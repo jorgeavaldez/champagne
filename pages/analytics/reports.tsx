@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';

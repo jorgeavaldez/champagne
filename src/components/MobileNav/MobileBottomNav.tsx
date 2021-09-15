@@ -14,18 +14,19 @@ export default function Topbar() {
         if (menuItem == 'campaign') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="/Campaign/Active">Active Campaigns</Nav.Link>
-                    <Nav.Link href="/Campaign/New">New Campaign</Nav.Link>
-                    <Nav.Link href="/Campaign/Calender">Campaign Calender</Nav.Link>
-                    <Nav.Link href="/Campaign/All">View All Campaigns</Nav.Link>
+                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
+                    <Nav.Link href="/campaign/active">Active Campaigns</Nav.Link>
+                    <Nav.Link href="/campaign/create">New Campaign</Nav.Link>
+                    <Nav.Link href="/campaign/calender">Campaign Calender</Nav.Link>
+                    <Nav.Link href="/campaign/list">View All Campaigns</Nav.Link>
                 </Nav>
             )
         }
         if (menuItem == 'analytics') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="/Analytics/Reports">Reports</Nav.Link>
-                    <Nav.Link href="/Analytics/Leads">Leads</Nav.Link>
+                    <Nav.Link href="/analytics/reports">Reports</Nav.Link>
+                    <Nav.Link href="/analytics/leads">Leads</Nav.Link>
                 </Nav>
             )
         }

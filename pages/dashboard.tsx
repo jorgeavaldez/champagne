@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useNear } from "../src/near/hooks";
 
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
@@ -14,19 +14,14 @@ function LoginPage() {
   const router = useRouter();
 
   const {
-    signedIn,
-    login,
+    signedIn
   } = useNear();
 
   useEffect(() => {
-    if (signedIn) {
+    if (!signedIn) {
       router.replace('/');
     }
   }, [signedIn, router]);
-
-  const onLoginClick = () => {
-    login();
-  };
 
   const [schedulePostOpen, setSchedulePostOpen] = useState(false);
 

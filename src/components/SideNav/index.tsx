@@ -37,17 +37,18 @@ export default function Sidebar() {
                 <Navbar.Collapse className="flex-column" id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <NavDropdown title="Campaigns" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/Campaign/Active">Active Campaigns</NavDropdown.Item>
-                            <NavDropdown.Item href="/Campaign/New">New Campaign</NavDropdown.Item>
-                            <NavDropdown.Item href="/Campaign/Calender">Campaign Calender</NavDropdown.Item>
+                            <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+                            <NavDropdown.Item href="/campaign/active">Active Campaigns</NavDropdown.Item>
+                            <NavDropdown.Item href="/campaign/create">New Campaign</NavDropdown.Item>
+                            <NavDropdown.Item href="/campaign/calender">Campaign Calender</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="/Campaign/All">View All Campaigns</NavDropdown.Item>
+                            <NavDropdown.Item href="/campaign/list">View All Campaigns</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav className="me-auto">
                         <NavDropdown title="Analytics" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/Analytics/Reports">Reports</NavDropdown.Item>
-                            <NavDropdown.Item href="/Analytics/Leads">Leads</NavDropdown.Item>
+                            <NavDropdown.Item href="/analytics/reports">Reports</NavDropdown.Item>
+                            <NavDropdown.Item href="/analytics/leads">Leads</NavDropdown.Item>
                         </NavDropdown>
                     </Nav> 
                     <Nav className="me-auto">
