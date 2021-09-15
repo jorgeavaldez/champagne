@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
+import LeadsTable from '../../src/components/Tables/LeadsTable';
 
 
 function Leads() {
@@ -21,6 +22,7 @@ function Leads() {
                     <Col lg={12}>
                         <AdminPageSectionContainer title="All Leads">
                             <Row className="w-100">
+                                <LeadsTable/>
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>

@@ -4,6 +4,8 @@ import { Row, Col } from 'react-bootstrap';
 import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
+import PostCard from '../../src/components/PostCard';
+import FansTable from '../../src/components/Tables/FansTable';
 
 const campaign = {
     name: "Twitter",
@@ -12,6 +14,27 @@ const campaign = {
     endDate: "09/06/21",
     status: "created",
 }
+
+const posts = [
+    {
+        campaign: "NFT Campaign",
+        caption: "Start Campaign",
+        status: "past",
+        date: "09/11/21"
+    },
+    {
+        campaign: "NFT Campaign",
+        caption: "Reminder about Campaign",
+        status: "created",
+        date: "09/15/21"
+    },
+    {
+        campaign: "NFT Campaign",
+        caption: "End Campaign",
+        status: "created",
+        date: "09/17/21"
+    },
+]
 
 function CampaignViewPage() {
 
@@ -46,14 +69,16 @@ function CampaignViewPage() {
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Posts">
-                            <Row className="w-100">
-                            </Row>
+                            <Col className="w-100 d-flex flex-row">
+                                {posts.map(post => <PostCard post={post}/>)}
+                            </Col>
                         </AdminPageSectionContainer>
                     </Col>
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Fans">
                             <Row className="w-100">
+                                <FansTable/>
                             </Row>
                         </AdminPageSectionContainer>
                     </Col>
