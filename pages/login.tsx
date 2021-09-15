@@ -39,11 +39,11 @@ function LoginPage() {
   }
 
   const campaign = {
-    name: "Twitter", 
+    name: "Twitter",
     reward: "Near Tokens",
     startDate: "09/01/21",
     endDate: "09/06/21",
-    status: "created", 
+    status: "created",
   }
 
   return (
@@ -66,8 +66,8 @@ function LoginPage() {
 
         <AdminPageSectionContainer title="My Campaigns">
           <Row className="w-100">
-              <CampaignCard campaign={campaign}/>
-           </Row>
+            <CampaignCard campaign={campaign} />
+          </Row>
         </AdminPageSectionContainer>
 
       </AdminLayout>
