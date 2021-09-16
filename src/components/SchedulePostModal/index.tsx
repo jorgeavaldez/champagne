@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 import styles from './SchedulePostModal.module.css';
 
-export default function SchedulePostModal({ id, open, close }) {
+export default function SchedulePostModal({ id = null, open, close }) {
 
     // TODO: 
     // - use id to query for schedule post to edit
