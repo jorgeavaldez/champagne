@@ -3,7 +3,11 @@ import { useForm } from "react-hook-form";
 
 import styles from './SchedulePostModal.module.css';
 
-export default function SchedulePostModal({ open, close }) {
+export default function SchedulePostModal({ id = null, open, close }) {
+
+    // TODO: 
+    // - use id to query for schedule post to edit
+    // - set default values in form  
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -25,13 +29,15 @@ export default function SchedulePostModal({ open, close }) {
                     {/* TODO: autopopulate based on what campaign is selected for testing */}
                     {/* !!: Remove this when we get campaing autopopulate field to work */}
                     <Form.Label className={styles.label}>Campaign</Form.Label>
-                    {/* register your input into the hook by invoking the "register" function */}
                     <Form.Control defaultValue="Campaign" {...register("campaign", { required: true })} />
                     {errors.campaign && <Row><Form.Text>This field is required</Form.Text></Row>}
 
                     <Form.Label className={styles.label}>Caption</Form.Label>
-                    {/* include validation with required or other standard HTML validation rules */}
                     <Form.Control defaultValue="Howdy Guys!" {...register("caption", { required: true })} />
+                    {errors.caption && <Row><Form.Text>This field is required</Form.Text></Row>}
+
+                    <Form.Label className={styles.label}>Date</Form.Label>
+                    <Form.Control type="date" defaultValue="" {...register("date", { required: true })} />
                     {errors.caption && <Row><Form.Text>This field is required</Form.Text></Row>}
 
                     <Form.Label className={styles.label}>Image</Form.Label>

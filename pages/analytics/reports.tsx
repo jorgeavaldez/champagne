@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { Row, Col } from 'react-bootstrap';
 
 import Layout from '../../src/components/Layout';
@@ -6,74 +5,77 @@ import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
+import CampaignCard from '../../src/components/CampaignCard';
 import StatsContainer from '../../src/components/StatsContainer';
 
-const campaign = {
-    name: "Twitter",
-    reward: "Near Tokens",
-    startDate: "09/01/21",
-    endDate: "09/06/21",
-    status: "created",
-}
+const campaigns = [
+    {
+        name: "Twitter",
+        reward: "Near Tokens",
+        startDate: "09/01/21",
+        endDate: "09/06/21",
+        status: "past",
+    },
+    {
+        name: "Instagram",
+        reward: "NFT",
+        startDate: "09/07/21",
+        endDate: "09/11/21",
+        status: "past",
+    }
+]
 
 const posts = [
     {
         campaign: "NFT Campaign",
         caption: "Start Campaign",
-        status: "past",
+        status: "Past",
         date: "09/11/21"
     },
     {
-        campaign: "NFT Campaign",
-        caption: "Reminder about Campaign",
-        status: "created",
+        campaign: "Instagram Campaign",
+        caption: "Start Campaign",
+        status: "Created",
         date: "09/15/21"
     },
     {
         campaign: "NFT Campaign",
         caption: "End Campaign",
-        status: "created",
+        status: "Created",
         date: "09/17/21"
     },
 ]
 
 const statsData = [
     {
-        label: "Total Number of Leads",
+        label: "Followers Gained",
+        data: "25"
+    },
+    {
+        label: "Total Number of Interactions",
+        data: "1800"
+    },
+    {
+        label: "Total Number of Camapigns",
+        data: "3"
+    },
+    {
+        label: "Number of Leads",
         data: "7"
-    },
-    {
-        label: "Top Post",
-        data: "Start NFT Campaign"
-    },
-    {
-        label: "Number of Interactions",
-        data: "145"
-    },
+    }
 ]
 
-function CampaignViewPage() {
-
-    const router = useRouter();
-    const { id } = router.query;
-
+function Reports() {
     return (
         <Layout>
-            <AdminLayout title={`Campaign Details ${id}`}>
+            <AdminLayout title="Reports">
                 <Row className='w-100'>
 
                     <Col lg={12}>
-                        <AdminPageSectionContainer title="Calender">
-                            <Col lg={12} className="w-100">
-                            </Col>
-                        </AdminPageSectionContainer>
-                    </Col>
-
-                    <Col lg={12}>
                         <AdminPageSectionContainer title="Running Total">
-                            <Row className="w-100">
+                            <Col lg={12} className="w-100">
                                 <StatsContainer data={statsData}/>
-                            </Row>
+                            </Col>
                         </AdminPageSectionContainer>
                     </Col>
 
@@ -85,6 +87,14 @@ function CampaignViewPage() {
                             </Row>
                         </AdminPageSectionContainer>
                     </Col> */}
+
+                    <Col lg={12}>
+                        <AdminPageSectionContainer title="Top Campaigns">
+                            <Row className="w-100">
+                                {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+                            </Row>
+                        </AdminPageSectionContainer>
+                    </Col>
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Posts">
@@ -108,4 +118,4 @@ function CampaignViewPage() {
     );
 }
 
-export default CampaignViewPage;
+export default Reports;
