@@ -1,6 +1,8 @@
 .label{
-    color:white;
+    color:#6100FF;
+    font-weight: bold;
 }
+
 .data{
     color: white;
 }
@@ -8,6 +10,6 @@
 .flexContainer{
     display: grid;
     grid-template-columns: repeat(2, minmax(50%, auto));
-    grid-auto-rows: minmax(30px, max-content);
+    grid-auto-rows: minmax(50px, max-content);
     align-items: center;
 }

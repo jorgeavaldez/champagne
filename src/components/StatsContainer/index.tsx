@@ -10,9 +10,9 @@ function StatsContainer({ data }) {
             return (
                 <>
                     {data.map(item =>
-                        <Col>
-                            <Row className={styles.rowItem}>
-                                <Col className={styles.colLabel}><h6 className={styles.label}>{item.label}:</h6></Col>
+                        <Col className={styles.colItem}>
+                            <Row>
+                                <Col><h6 className={styles.label}>{item.label}:</h6></Col>
                                 <Col><h6 className={styles.data}>{item.data}</h6></Col>
                             </Row>
                         </Col>
