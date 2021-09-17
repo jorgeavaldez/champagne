@@ -45,7 +45,7 @@ function CreateCampaign() {
 
   return (
     <Layout>
-      <AdminLayout title="Calender">
+      <AdminLayout title="Create Campaign">
 
         <Row className='w-100'>
           <Col lg={12}>
