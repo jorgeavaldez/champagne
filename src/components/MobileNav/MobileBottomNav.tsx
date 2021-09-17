@@ -14,7 +14,6 @@ export default function Topbar() {
         if (menuItem == 'campaign') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                     <Nav.Link href="/campaign/active">Active Campaigns</Nav.Link>
                     <Nav.Link href="/campaign/create">New Campaign</Nav.Link>
                     <Nav.Link href="/campaign/calender">Campaign Calender</Nav.Link>

@@ -1,6 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';
@@ -67,7 +66,6 @@ const statsData = [
 
 function Reports() {
     return (
-        <Layout>
             <AdminLayout title="Reports">
                 <Row className='w-100'>
 
@@ -96,7 +94,7 @@ function Reports() {
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Posts">
-                            <Col className="w-100 d-flex flex-row">
+                            <Col className="d-flex flex-column justify-content-start align-items-center">
                                 {posts.map(post => <PostCard post={post} />)}
                             </Col>
                         </AdminPageSectionContainer>
@@ -112,7 +110,6 @@ function Reports() {
 
                 </Row>
             </AdminLayout>
-        </Layout>
     );
 }
 

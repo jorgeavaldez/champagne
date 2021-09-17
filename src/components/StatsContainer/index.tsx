@@ -27,7 +27,7 @@ function StatsContainer({ data }) {
     }, [data]);
 
     return (
-        <Row className={`w-100 ${styles.flexContainer}`}>
+        <Row className={`${styles.flexContainer}`}>
             {stats}
         </Row>
     )
