@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 
 import { Navbar, Nav, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBullhorn, faChartPie, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBullhorn, faChartPie, faUsers, faHome } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './MobileNav.module.css';
 
@@ -50,6 +50,9 @@ export default function Topbar() {
             <Row className={`w-100 m-0 p-0 ${styles.nav}`}>{NavList}</Row>
 
             <Row className="w-100 m-0 p-0">
+            <Col>
+                    <Button className="btn btn-dark w-100" href="/dashboard"><FontAwesomeIcon icon={faHome} /></Button>
+                </Col>
                 <Col>
                     <Button className="btn btn-dark w-100" onClick={() => { setMenuItem('campaign') }}><FontAwesomeIcon icon={faBullhorn} /></Button>
                 </Col>
