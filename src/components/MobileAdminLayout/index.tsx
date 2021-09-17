@@ -8,7 +8,7 @@ export default function MobileLayout({ title, children }) {
     return (
         <Row>
             <MobileTopNav />
-            <Col sm={12} className="mb-5 pb-3">
+            <Col sm={12} className="m-0 p-0 pb-4">
                 <AdminPageContainer title={title}>
                     {children}
                 </AdminPageContainer>

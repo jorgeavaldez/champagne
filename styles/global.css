@@ -59,3 +59,13 @@
 .fc-daygrid-body{
     padding-top: 8px;
 }
+@media only screen and (max-width: 600px) {
+    .fc-toolbar-chunk{
+        justify-content: end;
+        align-items: end;
+        display: flex;
+    }
+    .fc{
+        font-size: small;
+    }
+}

@@ -32,7 +32,7 @@ const useMediaQuery = (width) => {
 };
 
 function AdminLayout({ title, children }) {
-    const isBreakpoint = useMediaQuery(768);
+    const isBreakpoint = useMediaQuery(976);
 
     return (
         <Container fluid>
