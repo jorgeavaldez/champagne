@@ -73,9 +73,7 @@ function Reports() {
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Running Total">
-                            <Col lg={12} className="w-100">
                                 <StatsContainer data={statsData}/>
-                            </Col>
                         </AdminPageSectionContainer>
                     </Col>
 

@@ -11,8 +11,8 @@ function StatsContainer({ data }) {
                 <>
                     {data.map(item =>
                         <Col>
-                            <Row>
-                                <Col><h5 className={styles.label}>{item.label}:</h5></Col>
+                            <Row className={styles.rowItem}>
+                                <Col className={styles.colLabel}><h6 className={styles.label}>{item.label}:</h6></Col>
                                 <Col><h6 className={styles.data}>{item.data}</h6></Col>
                             </Row>
                         </Col>
@@ -27,7 +27,7 @@ function StatsContainer({ data }) {
     }, [data]);
 
     return (
-        <Row className={styles.flexContainer}>
+        <Row className={`w-100 ${styles.flexContainer}`}>
             {stats}
         </Row>
     )
