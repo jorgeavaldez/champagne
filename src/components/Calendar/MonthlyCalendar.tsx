@@ -1,5 +1,3 @@
-import styles from "./Calendar.module.css";
-
 import { Row } from 'react-bootstrap';
 
 import FullCalendar from '@fullcalendar/react'
@@ -8,9 +6,8 @@ import interactionPlugin from '@fullcalendar/interaction'
 import bootstrapPlugin from '@fullcalendar/bootstrap'
 //import timeGridPlugin from '@fullcalendar/timegrid'
 
-export default function CampaignCalendar({ events }) {
+export default function MonthlyCalendar({ events }) {
   return (
-    <Row className="my-3">
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin, bootstrapPlugin]}
         initialView='dayGridMonth'
@@ -20,6 +17,5 @@ export default function CampaignCalendar({ events }) {
         themeSystem='bootstrap'
         eventColor= "#6100FF"
       />
-    </Row>
   )
 }

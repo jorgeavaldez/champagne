@@ -13,7 +13,49 @@
     background-color: #340286 !important;
     border-color: #340286 !important;
 }
+.fc{
+    color:white;
+}
+
+.weeklyCalendar>* .fc-daygrid-day-frame{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.fc-event-past{
+    background-color: #222222;
+    padding: 8px;
+}
+
+.fc-event-time, .fc-event-title {
+    padding: 0 4px;
+}
+
+.fc-event-title {
+    white-space: pre-line;
+}
 
 .fc-day-today{
-    background-color: #E5E5E5 !important;
+    background-color: #fff4f400 !important;
+}
+
+.fc-event-today{
+    background-color: #222222;
+    padding: 8px;
+}
+
+.fc-col-header-cell.fc-day-today{
+    border-radius: 10px;
+    background-color: #6100FF !important;
+    color: white;
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+}
+
+.fc-daygrid-body{
+    padding-top: 8px;
 }

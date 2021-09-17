@@ -2,7 +2,8 @@ import { Row, Col } from 'react-bootstrap';
 
 import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
-import Calendar from '../../src/components/Calendar';
+import MonthlyCalendar from '../../src/components/Calendar/MonthlyCalendar';
+import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 
 const events = [{
     id: 1,
@@ -29,7 +30,11 @@ function CampaignCalendar() {
             <AdminLayout title="Calender">
                 <Row className='w-100'>
                     <Col lg={12}>
-                        <Calendar events={events}/>
+                        <AdminPageSectionContainer title="">
+                            <Col lg={12} className="w-100">
+                                <MonthlyCalendar events={events} />
+                            </Col>
+                        </AdminPageSectionContainer>
                     </Col>
                 </Row>
 

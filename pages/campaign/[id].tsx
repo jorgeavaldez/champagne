@@ -7,6 +7,7 @@ import AdminPageSectionContainer from "../../src/components/AdminPageSectionCont
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
 import StatsContainer from '../../src/components/StatsContainer';
+import WeeklyCalendar from '../../src/components/Calendar/WeeklyCalendar';
 
 const campaign = {
     name: "Twitter",
@@ -52,6 +53,21 @@ const statsData = [
     },
 ]
 
+const events = [{
+    id: 1,
+    start: '2021-09-12T18:00:00',
+    title: 'Start Campaign'
+}, {
+    id: 2,
+    start: '2021-09-15T18:00:00',
+    title: 'Reminder Post about Campaign'
+}, {
+    id: 3,
+    start: '2021-09-17T18:00:00',
+    title: 'End Campaign Yeah'
+}];
+
+
 function CampaignViewPage() {
 
     const router = useRouter();
@@ -63,8 +79,9 @@ function CampaignViewPage() {
                 <Row className='w-100'>
 
                     <Col lg={12}>
-                        <AdminPageSectionContainer title="Calender">
-                            <Col lg={12} className="w-100">
+                        <AdminPageSectionContainer title="Post Calender">
+                            <Col lg={12} className="w-100 weeklyCalendar">
+                                <WeeklyCalendar events={events}/>
                             </Col>
                         </AdminPageSectionContainer>
                     </Col>
