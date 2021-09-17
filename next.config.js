@@ -4,6 +4,7 @@ const withTM = require('next-transpile-modules')([
   '@fullcalendar/interaction',
   '@fullcalendar/timegrid',
   '@fullcalendar/daygrid',
+  '@fullcalendar/bootstrap',
 ])
 
 module.exports = withTM({
