@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
-import { Row } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import AdminLayout from '../../src/components/AdminLayout';
 import CampaignCard from "../../src/components/CampaignCard";
+import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 
 import styles from '../../styles/pages/admin.module.css';
 
@@ -44,17 +45,13 @@ function ActiveCampaigns() {
 
     return (
         <AdminLayout title="Active Campaigns">
-
-            <Row className="w-100 mt-3">
-
-                {activeCampaigns &&
-                    <Row className={styles.cardContainer}>
-                        {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+            <Row>
+                <Col lg={12} className="mt-lg-3">
+                    <Row className={`d-flex justify-content-center justify-content-lg-between ${styles.cardContainer}`}>
+                        {activeCampaigns && activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
                     </Row>
-                }
-
+                </Col>
             </Row>
-
         </AdminLayout>
     );
 }

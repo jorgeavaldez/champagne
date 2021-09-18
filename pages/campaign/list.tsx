@@ -47,7 +47,7 @@ function ListCampaigns() {
   return (
     <AdminLayout title="All Campaigns">
       
-      <Row className="w-100 mt-3">
+      <Row className="w-100 mt-1">
 
         {createdCampaigns &&
           <Col className="d-flex flex-column justify-content-start align-items-center">

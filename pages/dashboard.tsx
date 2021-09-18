@@ -93,9 +93,9 @@ function Dashboard() {
             </Row>
           </AdminPageSectionContainer>
         </Col>
-
         <Col lg={12}>
           <AdminPageSectionContainer title="Active Campaigns">
+
             <Row className={styles.cardContainer}>
               <CampaignCard campaign={campaign} />
             </Row>
