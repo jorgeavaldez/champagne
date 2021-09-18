@@ -7,6 +7,8 @@ import FansTable from '../../src/components/Tables/FansTable';
 import CampaignCard from '../../src/components/CampaignCard';
 import StatsContainer from '../../src/components/StatsContainer';
 
+import styles from '../../styles/pages/admin.module.css';
+
 const campaigns = [
     {
         name: "Twitter",
@@ -86,7 +88,7 @@ function Reports() {
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Campaigns">
-                            <Row className="w-100">
+                            <Row className={styles.cardContainer}>
                                 {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
                             </Row>
                         </AdminPageSectionContainer>
@@ -94,9 +96,9 @@ function Reports() {
 
                     <Col lg={12}>
                         <AdminPageSectionContainer title="Top Posts">
-                            <Col className="d-flex flex-column justify-content-start align-items-center">
+                            <Row className={styles.cardContainer}>
                                 {posts.map(post => <PostCard post={post} />)}
-                            </Col>
+                            </Row>
                         </AdminPageSectionContainer>
                     </Col>
 

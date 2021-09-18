@@ -51,9 +51,9 @@ function ActiveCampaigns() {
                 <Row className="w-100 mt-3">
 
                     {activeCampaigns &&
-                        <Col lg={12} className="d-flex flex-column justify-content-start align-items-center">
+                        <Row className={styles.cardContainer}>
                             {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-                        </Col>
+                        </Row>
                     }
 
                 </Row>

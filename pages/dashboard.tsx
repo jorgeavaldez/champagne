@@ -11,6 +11,8 @@ import CampaignCard from "../src/components/CampaignCard";
 import StatsContainer from "../src/components/StatsContainer";
 import WeeklyCalendar from '../src/components/Calendar/WeeklyCalendar';
 
+import styles from '../styles/pages/admin.module.css';
+
 const statsData = [
   {
     label: "Total # of leads",
@@ -96,7 +98,7 @@ function Dashboard() {
 
           <Col lg={12}>
             <AdminPageSectionContainer title="Active Campaigns">
-              <Row className="w-100">
+              <Row className={styles.cardContainer}>
                 <CampaignCard campaign={campaign} />
               </Row>
             </AdminPageSectionContainer>

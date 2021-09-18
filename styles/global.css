@@ -13,6 +13,9 @@
     background-color: #340286 !important;
     border-color: #340286 !important;
 }
+
+/* CSS for Calendar */
+
 .fc{
     color:white;
 }
@@ -59,6 +62,7 @@
 .fc-daygrid-body{
     padding-top: 8px;
 }
+
 @media only screen and (max-width: 600px) {
     .fc-toolbar-chunk{
         justify-content: end;

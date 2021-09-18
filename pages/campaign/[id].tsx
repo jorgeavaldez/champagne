@@ -9,6 +9,8 @@ import FansTable from '../../src/components/Tables/FansTable';
 import StatsContainer from '../../src/components/StatsContainer';
 import WeeklyCalendar from '../../src/components/Calendar/WeeklyCalendar';
 
+import styles from '../../styles/pages/admin.module.css';
+
 const campaign = {
     name: "Twitter",
     reward: "Near Tokens",
@@ -104,9 +106,9 @@ function CampaignViewPage() {
 
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Top Posts">
-                        <Col className="d-flex flex-column justify-content-start align-items-center">
+                        <Row className={styles.cardContainer}>
                             {posts.map(post => <PostCard post={post} />)}
-                        </Col>
+                        </Row>
                     </AdminPageSectionContainer>
                 </Col>
 
