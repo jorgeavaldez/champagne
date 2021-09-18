@@ -4,7 +4,7 @@
 }
 
 .title {
-    padding: 8px 0px 8px 0px;
+    padding: 16px 0px 8px 0px;
     margin: 0;
     font-family: Nexa Bold;
     font-style: normal;
@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: light;
     color: white;
-    padding: 8px 0px 8px 0px;
+    padding: 8px 16px 8px 16px;
 }
 
 .card {
@@ -30,9 +30,16 @@
     flex: 1 0 30%;
     background-color: #6100FF;
     flex-grow: unset;
+    border-radius: 20px 0px;
 }
 
 .titleRow {
-    margin: 8px 0px 8px 0px;
+    margin: 16px 0px 16px 0px;
     padding: 0;
+}
+
+.cardContainer {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
 }

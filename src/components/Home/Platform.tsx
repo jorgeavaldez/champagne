@@ -14,9 +14,11 @@ export default function Platform() {
                     <Row>
                         <h6>Our tool helps Artists, Creators, and Influencers define real-time marketing strategies.</h6>
                     </Row>
-                    <Row>
-                        <PlatformCards/>
-                    </Row>
+                </Col>
+                <Col lg={12}>
+                <Row>
+                    <PlatformCards />
+                </Row>
                 </Col>
             </Row>
         </Container>
