@@ -1,12 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
+import RewardCards from "../RewardCards";
+
 import styles from './Home.module.css';
 
 export default function Rewards() {
     return (
-        <Container fluid id="Rewards">
+        <Container fluid id="Rewards" className={styles.purpleContainer}>
             <Row>
-                <Col lg={6} sm={12}>
-
+                <Col lg={12}>
+                    <RewardCards />
                 </Col>
             </Row>
         </Container>

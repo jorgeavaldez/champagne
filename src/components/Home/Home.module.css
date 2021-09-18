@@ -1,6 +1,7 @@
 .mainContainer {
     z-index: 20;
     margin-top: 200px;
+    padding: 0;
 }
 
 .textContainer {
@@ -29,4 +30,10 @@
     font-size: 32px;
     padding: 0px 40px 0px 40px;
     border-radius: 32px;
+}
+
+.purpleContainer {
+    background-color: #6100FF;
+    margin: 0;
+    padding: 32px;
 }

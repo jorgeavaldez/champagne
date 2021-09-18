@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import Home from './Home';
 import Platform from './Platform';
 import HowSection from "../HomeSection/HowSection";
+import Rewards from "./Rewards";
 import WhySection from "../HomeSection/WhySection";
 import SparkleSection from '../HomeSection/SparkleSection'
 
@@ -14,6 +15,7 @@ export default function HomePage() {
             <Home />
             <Platform />
             <HowSection />
+            <Rewards />
             <WhySection />
             <SparkleSection />
         </Container>

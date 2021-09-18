@@ -16,9 +16,7 @@ export default function Platform() {
                     </Row>
                 </Col>
                 <Col lg={12}>
-                <Row>
                     <PlatformCards />
-                </Row>
                 </Col>
             </Row>
         </Container>
