@@ -1,24 +1,28 @@
 import Link from "next/link";
 import { useNear } from "../src/near/hooks";
 
+import { Container, Row, Col } from 'react-bootstrap';
+
+import HomeLayout from '../src/components/HomeLayout';
+import Home from '../src/components/Home';
+
+import styles from '../styles/pages/home.module.css';
+
 export default function HomePage() {
   const { signedIn, accountId, networkId } = useNear();
 
   return (
-    <main>
-      <header>
-        <h1>champagne</h1>
-        <p>
-          create campaigns to reward twitter interactions with a near droplink
-        </p>
-      </header>
+    <HomeLayout>
+      <Container fluid>
+        <Row className={styles.homeContainer}>
+            <Home />
 
-      {signedIn && (
+            {/* {signedIn && (
         <h2>
           You are signed in as {accountId} on network {networkId}
         </h2>
-      )}
-
+      )} 
+      
       {signedIn && (
         <div>
           <Link href="/campaign/create">create a campaign</Link>
@@ -32,7 +36,9 @@ export default function HomePage() {
             <Link href="/login">sign in</Link>
           </p>
         </>
-      )}
-    </main>
+      )} */}
+        </Row>
+      </Container>
+    </HomeLayout>
   );
 }
