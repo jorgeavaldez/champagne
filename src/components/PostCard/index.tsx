@@ -36,10 +36,10 @@ export default function PostCard({ post }) {
                 <Card.Body>
                     <Row className="d-flex flex-column align-items-center mx-1">
                         {/* TODO: add post image */}
-                        <p className={styles.title}>{post.campaign}</p>
+                        <h5 className={styles.title}>{post.campaign}</h5>
                         <p className={styles.subtitle}>{post.caption}</p>
                         <p className={styles.subtitle}>{post.status}</p>
-                        <p className={styles.subtitle}>{post.date}</p>
+                        <p className={styles.date}>{post.date}</p>
                         {actions}
                     </Row>
                 </Card.Body>

@@ -1,5 +1,5 @@
-import styles from './Table.module.css';
-import { Table, Row } from 'react-bootstrap';
+import styles from './Tables.module.css';
+import { Table } from 'react-bootstrap';
 
 const fans = [
     {
@@ -36,7 +36,7 @@ const fans = [
 
 export default function FansTable() {
     return (
-        <Table responsive striped bordered hover variant="dark">
+        <Table responsive striped bordered hover variant="dark" className={styles.table}>
             <thead>
                 <tr>
                     <th>Rank</th>

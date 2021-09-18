@@ -12,3 +12,15 @@
 .icon{
     margin-right: 8px;
 }
+
+.light{
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
+}
+
+.bold{
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
+}

@@ -1,4 +1,4 @@
-import { Modal, Form, Row, Button } from "react-bootstrap";
+import { Modal, Form, Row, Button, ModalTitle } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
 import styles from './SchedulePostModal.module.css';
@@ -19,12 +19,12 @@ export default function SchedulePostModal({ id = null, open, close }) {
         <Modal show={open} onHide={close}>
 
             <Modal.Header closeButton>
-                <Modal.Title>Scedule Post</Modal.Title>
+                <Modal.Title className={styles.modalTitle}>Schedule Post</Modal.Title>
             </Modal.Header>
             
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
-                <Modal.Body>
+                <Modal.Body className={styles.modalBody}>
 
                     {/* TODO: autopopulate based on what campaign is selected for testing */}
                     {/* !!: Remove this when we get campaing autopopulate field to work */}

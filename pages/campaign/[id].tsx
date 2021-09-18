@@ -81,7 +81,7 @@ function CampaignViewPage() {
 
 
     return (
-        <AdminLayout title={`Campaign Details ${id}`}>
+        <AdminLayout title={`CAMPAIGN DETAILS - ${id}`}>
             <Row className={`w-100 {styles.allElements}`}>
 
                 <Col lg={12} className={styles.blob}>
@@ -91,7 +91,7 @@ function CampaignViewPage() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Post Calender">
+                    <AdminPageSectionContainer title="POST CALENDAR">
                         <Col lg={12} className="w-100 weeklyCalendar">
                             {events ? <WeeklyCalendar events={events} /> : <h6 className={styles.noData}>We could not find any events.</h6>}
                         </Col>
@@ -99,7 +99,7 @@ function CampaignViewPage() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Running Total">
+                    <AdminPageSectionContainer title="RUNNING TOTAL">
                         <Row className="w-100">
                             {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
                         </Row>
@@ -116,7 +116,7 @@ function CampaignViewPage() {
                     </Col> */}
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Top Posts">
+                    <AdminPageSectionContainer title="TOP POSTS">
                         <Row className={styles.cardContainer}>
                             {posts ? posts.map(post => <PostCard post={post} />) : <h6 className={styles.noData}>We could not find any posts.</h6>}
                         </Row>
@@ -124,7 +124,7 @@ function CampaignViewPage() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Top Fans">
+                    <AdminPageSectionContainer title="TOP FANS">
                         <Row className="w-100">
                             <FansTable />
                         </Row>

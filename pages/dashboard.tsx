@@ -80,18 +80,18 @@ function Dashboard() {
   // }, [signedIn, router]);
 
   return (
-    <AdminLayout title="Welcome Back">
+    <AdminLayout title="WELCOME BACK">
       <Row className='w-100'>
 
         <Col lg={12}>
-          <AdminPageSectionContainer title="While you were away">
+          <AdminPageSectionContainer title="WHILE YOU WERE AWAY">
             <Row className="w-100">
               {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>There is no data to display.</h6>}
             </Row>
           </AdminPageSectionContainer>
         </Col>
         <Col lg={12}>
-          <AdminPageSectionContainer title="Active Campaigns">
+          <AdminPageSectionContainer title="ACTIVE CAMPAIGNS">
 
             <Row className={styles.cardContainer}>
               {campaign ? <CampaignCard campaign={campaign} /> : <h6 className={styles.noData}>There are no active campaigns.</h6>}
@@ -100,7 +100,7 @@ function Dashboard() {
         </Col>
 
         <Col lg={12}>
-          <AdminPageSectionContainer title="Campaign Calender">
+          <AdminPageSectionContainer title="CAMPAIGN CALENDAR">
             <Col lg={12} className="w-100 weeklyCalendar">
               {campaignEvents ? <WeeklyCalendar events={campaignEvents} /> : <h6 className={styles.noData}>There are no campaigns scheduled this week.</h6>}
             </Col>
@@ -108,7 +108,7 @@ function Dashboard() {
         </Col>
 
         <Col lg={12}>
-          <AdminPageSectionContainer title="Post Calender">
+          <AdminPageSectionContainer title="POST CALENDAR">
             <Col lg={12} className="w-100 weeklyCalendar">
               {postEvents ? <WeeklyCalendar events={postEvents} /> : <h6 className={styles.noData}>There are no posts scheduled this week.</h6>}
             </Col>

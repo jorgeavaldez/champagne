@@ -29,7 +29,7 @@ export default function Sidebar() {
 
                 {/* TODO: add login user name and link to wallet */}
                 <Navbar.Brand>
-                    <Button variant="dark" className="w-100" onClick={goToNearWallet}>
+                    <Button className={`w-100 ${styles.light}`} variant="dark" onClick={goToNearWallet}>
                         charfield.near
                     </Button>
                 </Navbar.Brand>
@@ -38,36 +38,36 @@ export default function Sidebar() {
 
                 <Navbar.Collapse className="flex-column" id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/dashboard">
+                        <Nav.Link href="/dashboard" className={styles.bold}>
                             <FontAwesomeIcon icon={faHome} className={styles.icon} />
                             Dashboard
                         </Nav.Link>
                     </Nav>
                     <Nav className="me-auto">
-                        <NavDropdown title="Campaigns" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/campaign/active">Active Campaigns</NavDropdown.Item>
-                            <NavDropdown.Item href="/campaign/create">New Campaign</NavDropdown.Item>
-                            <NavDropdown.Item href="/campaign/calender">Campaign Calender</NavDropdown.Item>
+                        <NavDropdown title="Campaigns" id="basic-nav-dropdown" className={styles.bold}>
+                            <NavDropdown.Item className={styles.light} href="/campaign/active">Active Campaigns</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="/campaign/create">New Campaign</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="/campaign/calender">Campaign Calender</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="/campaign/list">View All Campaigns</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="/campaign/list">View All Campaigns</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav className="me-auto">
-                        <NavDropdown title="Analytics" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/analytics/reports">Reports</NavDropdown.Item>
-                            <NavDropdown.Item href="/analytics/leads">Leads</NavDropdown.Item>
+                        <NavDropdown title="Analytics" id="basic-nav-dropdown" className={styles.bold}>
+                            <NavDropdown.Item className={styles.light} href="/analytics/reports">Reports</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="/analytics/leads">Leads</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav className="me-auto">
-                        <NavDropdown title="Social Accounts" id="basic-nav-dropdown">
+                        <NavDropdown title="Social Accounts" id="basic-nav-dropdown" className={styles.bold}>
                             {/* TODO: add login and logout capablities when clicked */}
-                            <NavDropdown.Item href="">Instagram</NavDropdown.Item>
-                            <NavDropdown.Item href="">Twitter</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="">Instagram</NavDropdown.Item>
+                            <NavDropdown.Item className={styles.light} href="">Twitter</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
 
-                <Button variant="dark" className="w-100" onClick={onLogoutClick}>
+                <Button variant="dark" className={`w-100 ${styles.light}`} onClick={onLogoutClick}>
                     logout
                 </Button>
 

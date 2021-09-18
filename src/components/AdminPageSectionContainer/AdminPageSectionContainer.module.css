@@ -4,6 +4,10 @@
 
 .title{
     color: #000000;
+    font-family: Hanson;
+    font-style: normal;
+    font-weight: bold;
+    margin: 8px 0px 8px 0px;
 }
 
 .body{
@@ -15,5 +19,8 @@
 @media only screen and (max-width: 600px) {
     .body{
         padding: 8px;
+    }
+      .title{
+        text-align: center;
     }
   }

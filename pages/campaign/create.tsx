@@ -46,10 +46,10 @@ function CreateCampaign() {
 
 
   return (
-    <AdminLayout title="Create Campaign">
+    <AdminLayout title="CREATE CAMPAIGN">
 
-      <Row className={styles.formRow}>
-        <Form onSubmit={handleSubmit(onSubmit)}>
+      <Row className={`mt-lg-2 ${styles.formRow}`}>
+        <Form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
           <Form.Label className={styles.label}>Name</Form.Label>
           <Form.Control defaultValue="" {...register("name", { required: true })} />

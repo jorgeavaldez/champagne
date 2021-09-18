@@ -1,4 +1,4 @@
-import styles from './Table.module.css';
+import styles from './Tables.module.css';
 import { Table, Row } from 'react-bootstrap';
 
 const leads = [
@@ -41,7 +41,7 @@ const leads = [
 
 export default function LeadsTable() {
     return (
-        <Table responsive striped bordered hover variant="dark">
+        <Table responsive striped bordered hover variant="dark" className={styles.table}>
             <thead>
                 <tr>
                     <th>Username</th>

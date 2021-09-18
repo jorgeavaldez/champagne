@@ -4,6 +4,9 @@
     padding: 0px;
     padding-top: 8px;
     padding-left: 16px;
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
 }
 
 .link:hover, .link:active{
@@ -11,15 +14,27 @@
 }
 
 .title{
-    font-size: 24px;
     padding: 0;
-    margin: 0;
+    margin: 8px 0px 8px 0px;
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .subtitle{
-    font-size: 18px;
     padding: 0;
-    margin:0
+    margin:0;
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
+}
+
+.date{
+    padding: 0;
+    margin:0;
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .card{

@@ -1,7 +1,17 @@
 .label{
     margin-top: 8px;
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
 }
 
 .formRow{
     min-width: 50%;
+    max-width: 100%;
+}
+
+.form{
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
 }

@@ -14,26 +14,26 @@ export default function Topbar() {
         if (menuItem == 'campaign') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="/campaign/active">Active Campaigns</Nav.Link>
-                    <Nav.Link href="/campaign/create">New Campaign</Nav.Link>
-                    <Nav.Link href="/campaign/calender">Campaign Calender</Nav.Link>
-                    <Nav.Link href="/campaign/list">View All Campaigns</Nav.Link>
+                    <Nav.Link className={styles.light} href="/campaign/active">Active Campaigns</Nav.Link>
+                    <Nav.Link className={styles.light} href="/campaign/create">New Campaign</Nav.Link>
+                    <Nav.Link className={styles.light} href="/campaign/calender">Campaign Calender</Nav.Link>
+                    <Nav.Link className={styles.light} href="/campaign/list">View All Campaigns</Nav.Link>
                 </Nav>
             )
         }
         if (menuItem == 'analytics') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="/analytics/reports">Reports</Nav.Link>
-                    <Nav.Link href="/analytics/leads">Leads</Nav.Link>
+                    <Nav.Link className={styles.light} href="/analytics/reports">Reports</Nav.Link>
+                    <Nav.Link className={styles.light} href="/analytics/leads">Leads</Nav.Link>
                 </Nav>
             )
         }
         if (menuItem == 'social') {
             return (
                 <Nav className="justify-content-center align-items-center mb-2">
-                    <Nav.Link href="">Instagram</Nav.Link>
-                    <Nav.Link href="">Twitter</Nav.Link>
+                    <Nav.Link className={styles.light} href="">Instagram</Nav.Link>
+                    <Nav.Link className={styles.light} href="">Twitter</Nav.Link>
                 </Nav>
             )
 
