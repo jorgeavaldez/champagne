@@ -1,8 +1,7 @@
 import { useMemo } from "react";
 
-import { Row, Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import CampaignCard from "../../src/components/CampaignCard";
 
@@ -44,22 +43,19 @@ function ActiveCampaigns() {
     const activeCampaigns = useMemo(() => campaigns.filter((c) => c.status === 'active'), []);
 
     return (
-        <Layout>
-            <AdminLayout title="Active Campaigns">
+        <AdminLayout title="Active Campaigns">
 
+            <Row className="w-100 mt-3">
 
-                <Row className="w-100 mt-3">
+                {activeCampaigns &&
+                    <Row className={styles.cardContainer}>
+                        {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+                    </Row>
+                }
 
-                    {activeCampaigns &&
-                        <Row className={styles.cardContainer}>
-                            {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-                        </Row>
-                    }
+            </Row>
 
-                </Row>
-
-            </AdminLayout>
-        </Layout>
+        </AdminLayout>
     );
 }
 

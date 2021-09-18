@@ -4,7 +4,6 @@ import { useNear } from "../src/near/hooks";
 
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../src/components/Layout';
 import AdminLayout from '../src/components/AdminLayout';
 import AdminPageSectionContainer from "../src/components/AdminPageSectionContainer";
 import CampaignCard from "../src/components/CampaignCard";
@@ -84,45 +83,43 @@ function Dashboard() {
   // }, [signedIn, router]);
 
   return (
-    <Layout>
-      <AdminLayout title="Welcome Back">
-        <Row className='w-100'>
+    <AdminLayout title="Welcome Back">
+      <Row className='w-100'>
 
-          <Col lg={12}>
-            <AdminPageSectionContainer title="While you were away">
-              <Row className="w-100">
-                <StatsContainer data={statsData} />
-              </Row>
-            </AdminPageSectionContainer>
-          </Col>
+        <Col lg={12}>
+          <AdminPageSectionContainer title="While you were away">
+            <Row className="w-100">
+              <StatsContainer data={statsData} />
+            </Row>
+          </AdminPageSectionContainer>
+        </Col>
 
-          <Col lg={12}>
-            <AdminPageSectionContainer title="Active Campaigns">
-              <Row className={styles.cardContainer}>
-                <CampaignCard campaign={campaign} />
-              </Row>
-            </AdminPageSectionContainer>
-          </Col>
+        <Col lg={12}>
+          <AdminPageSectionContainer title="Active Campaigns">
+            <Row className={styles.cardContainer}>
+              <CampaignCard campaign={campaign} />
+            </Row>
+          </AdminPageSectionContainer>
+        </Col>
 
-          <Col lg={12}>
-            <AdminPageSectionContainer title="Campaign Calender">
-              <Col lg={12} className="w-100 weeklyCalendar">
-                <WeeklyCalendar events={campaignEvents} />
-              </Col>
-            </AdminPageSectionContainer>
-          </Col>
+        <Col lg={12}>
+          <AdminPageSectionContainer title="Campaign Calender">
+            <Col lg={12} className="w-100 weeklyCalendar">
+              <WeeklyCalendar events={campaignEvents} />
+            </Col>
+          </AdminPageSectionContainer>
+        </Col>
 
-          <Col lg={12}>
-            <AdminPageSectionContainer title="Post Calender">
-              <Col lg={12} className="w-100 weeklyCalendar">
-                <WeeklyCalendar events={postEvents} />
-              </Col>
-            </AdminPageSectionContainer>
-          </Col>
+        <Col lg={12}>
+          <AdminPageSectionContainer title="Post Calender">
+            <Col lg={12} className="w-100 weeklyCalendar">
+              <WeeklyCalendar events={postEvents} />
+            </Col>
+          </AdminPageSectionContainer>
+        </Col>
 
-        </Row>
-      </AdminLayout>
-    </Layout>
+      </Row>
+    </AdminLayout>
   );
 }
 

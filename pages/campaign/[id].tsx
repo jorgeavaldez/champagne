@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';

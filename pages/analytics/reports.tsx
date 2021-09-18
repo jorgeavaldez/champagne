@@ -68,50 +68,50 @@ const statsData = [
 
 function Reports() {
     return (
-            <AdminLayout title="Reports">
-                <Row className='w-100'>
+        <AdminLayout title="Reports">
+            <Row className='w-100'>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Running Total">
-                                <StatsContainer data={statsData}/>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Running Total">
+                        <StatsContainer data={statsData} />
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    {/* TODO: If we can get metric data add this back in */}
+                {/* TODO: If we can get metric data add this back in */}
 
-                    {/* <Col lg={12}>
+                {/* <Col lg={12}>
                         <AdminPageSectionContainer title="Key Metrics">
                             <Row className="w-100">
                             </Row>
                         </AdminPageSectionContainer>
                     </Col> */}
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Campaigns">
-                            <Row className={styles.cardContainer}>
-                                {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-                            </Row>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Campaigns">
+                        <Row className={styles.cardContainer}>
+                            {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Posts">
-                            <Row className={styles.cardContainer}>
-                                {posts.map(post => <PostCard post={post} />)}
-                            </Row>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Posts">
+                        <Row className={styles.cardContainer}>
+                            {posts.map(post => <PostCard post={post} />)}
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Fans">
-                            <Row className="w-100">
-                                <FansTable />
-                            </Row>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Fans">
+                        <Row className="w-100">
+                            <FansTable />
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                </Row>
-            </AdminLayout>
+            </Row>
+        </AdminLayout>
     );
 }
 
