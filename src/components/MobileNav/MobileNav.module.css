@@ -1,3 +1,11 @@
-.nav{
-    /* TODO: style! background-color: rgb(33, 37, 41, 0.5);*/ 
+.light{
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
+}
+
+.bold{
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
 }

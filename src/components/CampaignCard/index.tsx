@@ -40,9 +40,9 @@ export default function CampaignCard({ campaign }) {
         <Card className={styles.card}>
             <Card.Body>
                 <Row className="d-flex flex-column align-items-center mx-1">
-                    <p className={styles.title}>{campaign.name}</p>
+                    <h5 className={styles.title}>{campaign.name}</h5>
                     <p className={styles.subtitle}>{campaign.reward}</p>
-                    <p className={styles.subtitle}>{campaign.startDate} - {campaign.endDate}</p>
+                    <p className={styles.date}>{campaign.startDate} - {campaign.endDate}</p>
                     {actions}
                 </Row>
             </Card.Body>

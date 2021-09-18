@@ -7,7 +7,7 @@ export default function AdminPageSectionContainer({ title, children }) {
         <Container fluid>
 
             <Row className={`${styles.box}`}>
-                <Col className="d-flex justify-content-start">
+                <Col className="d-flex justify-content-center justify-content-lg-start">
                     <h5 className={styles.title}>{title}</h5>
                 </Col>
             </Row>

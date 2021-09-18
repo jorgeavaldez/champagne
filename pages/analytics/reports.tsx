@@ -68,11 +68,11 @@ const statsData = [
 
 function Reports() {
     return (
-        <AdminLayout title="Reports">
+        <AdminLayout title="REPORTS">
             <Row className='w-100'>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Running Total">
+                    <AdminPageSectionContainer title="RUNNING TOTAL">
                     {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
                     </AdminPageSectionContainer>
                 </Col>
@@ -87,7 +87,7 @@ function Reports() {
                     </Col> */}
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Top Campaigns">
+                    <AdminPageSectionContainer title="TOP CAMPAIGNS">
                         <Row className={styles.cardContainer}>
                             {campaigns ? campaigns.map(campaign => <CampaignCard campaign={campaign} />) : <h6 className={styles.noData}>We could not find any campaigns.</h6>}
                         </Row>
@@ -95,7 +95,7 @@ function Reports() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Top Posts">
+                    <AdminPageSectionContainer title="TOP POSTS">
                         <Row className={styles.cardContainer}>
                             {posts ? posts.map(post => <PostCard post={post} />) : <h6 className={styles.noData}>We could not find any posts.</h6>}
                         </Row>
@@ -103,7 +103,7 @@ function Reports() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Top Fans">
+                    <AdminPageSectionContainer title="TOP FANS">
                         <Row className="w-100">
                             <FansTable />
                         </Row>

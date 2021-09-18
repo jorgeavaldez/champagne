@@ -44,7 +44,7 @@ function ActiveCampaigns() {
     const activeCampaigns = useMemo(() => campaigns.filter((c) => c.status === 'active'), []);
 
     return (
-        <AdminLayout title="Active Campaigns">
+        <AdminLayout title="ACTIVE CAMPAIGNS">
             <Row>
                 <Col lg={12} className="mt-lg-3">
                     <Row className={`d-flex justify-content-center justify-content-lg-between ${styles.cardContainer}`}>

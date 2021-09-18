@@ -11,6 +11,10 @@
 
 .title{
     color: #6100FF;
+    font-family: Hanson;
+    font-style: normal;
+    font-weight: bold;
+    margin: 8px 0px 8px 0px;
 }
 
 
@@ -40,5 +44,8 @@
         margin: 0 !important;
         padding: 0 !important;
         overflow-x: hidden;
+    }
+    .title{
+        text-align: center;
     }
   }

@@ -52,12 +52,12 @@ export default function EditCampaignModal({ id = null, open, close }) {
         <Modal show={open} onHide={close}>
 
             <Modal.Header closeButton>
-                <Modal.Title>Edit Campaign</Modal.Title>
+                <Modal.Title className={styles.modalTitle}>Edit Campaign</Modal.Title>
             </Modal.Header>
 
-            <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
 
-                <Modal.Body>
+                <Modal.Body className={styles.modalBody}>
                     <Form.Label className={styles.label}>Name</Form.Label>
                     <Form.Control defaultValue="" {...register("name", { required: true })} />
                     {errors.name && <Row><Form.Text>This field is required</Form.Text></Row>}

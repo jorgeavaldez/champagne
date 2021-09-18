@@ -32,7 +32,7 @@ const statsData = [
 
 function Leads() {
     return (
-        <AdminLayout title="Leads">
+        <AdminLayout title="LEADS">
 
             <Row className='w-100'>
 
@@ -46,7 +46,7 @@ function Leads() {
                     </Col> */}
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="Running Total">
+                    <AdminPageSectionContainer title="RUNNING TOTAL">
                         <Col lg={12} className="w-100">
                             {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
                         </Col>
@@ -54,7 +54,7 @@ function Leads() {
                 </Col>
 
                 <Col lg={12}>
-                    <AdminPageSectionContainer title="All Leads">
+                    <AdminPageSectionContainer title="ALL LEADS">
                         <Row className="w-100">
                             <LeadsTable />
                         </Row>

@@ -1,4 +1,5 @@
 import { Navbar, Row, Col, Button } from "react-bootstrap";
+import styles from './MobileNav.module.css';
 
 export default function Topbar() {
 
@@ -8,13 +9,13 @@ export default function Topbar() {
                 <Col className="d-flex justify-content-end">
                     {/* TODO: add login user name and link to wallet */}
                     <Navbar.Brand>
-                        <Button variant="dark" className="w-100">
+                        <Button variant="dark" className={`w-100 ${styles.light}`}>
                             charfield.near
                         </Button>
                     </Navbar.Brand>
                 </Col>
                 <Col className="d-flex justify-content-end">
-                    <Button variant="dark" className="w-100">
+                    <Button variant="dark" className={`w-100 ${styles.light}`}>
                         logout
                     </Button>
                 </Col>

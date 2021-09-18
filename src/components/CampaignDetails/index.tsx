@@ -37,11 +37,11 @@ export default function AdminPageSectionContainer({ campaign }) {
             {schedulePostOpen && <SchedulePostModal open={schedulePostOpen} close={onCloseSchedulePost} />}
             {editCampaignOpen && <EditCampaignModal open={editCampaignOpen} close={onCloseEditCampaign} />}
             <Row className={styles.body}>
-                <Row className="d-flex align-items-start">
+                <Row className="d-flex align-items-center align-items-lg-start">
                     <Col lg={3} md={6} sm={12} className="d-flex flex-column">
-                        <div className="my-3 d-flex flex-column justify-content-center align-items-center">
+                        <div className="my-1 d-flex flex-column justify-content-center align-items-center">
                             <FontAwesomeIcon className={styles.icon} icon={faFire} />
-                            <h4>Details</h4>
+                            <h4 className={styles.title}>Details</h4>
                         </div>
                         <div className="d-flex flex-column justify-content-center align-items-center">
                             <h6 className={styles.detail}>{campaign.name}</h6>
@@ -50,23 +50,23 @@ export default function AdminPageSectionContainer({ campaign }) {
                         </div>
                     </Col>
                     <Col lg={3} md={6} sm={12} className="d-flex flex-column">
-                        <div className="my-3 d-flex flex-column justify-content-center align-items-center">
+                        <div className="my-1 d-flex flex-column justify-content-center align-items-center">
                             <FontAwesomeIcon className={styles.icon} icon={faCalendarWeek} />
-                            <h4>Dates</h4>
+                            <h4 className={styles.title}>Dates</h4>
                         </div>
                         <h6 className={`text-center ${styles.detail}`}>{campaign.startDate}-{campaign.endDate}</h6>
                     </Col>
                     <Col lg={3} md={6} sm={12} className="d-flex flex-column">
-                        <div className="my-3 d-flex flex-column justify-content-center align-items-center">
+                        <div className="my-1 d-flex flex-column justify-content-center align-items-center">
                             <FontAwesomeIcon className={styles.icon} icon={faGem} />
-                            <h4>Rewards</h4>
+                            <h4 className={styles.title}>Rewards</h4>
                         </div>
                         <h6 className={`text-center ${styles.detail}`}> {campaign.reward} {campaign.rewardType}</h6>
                     </Col>
                     <Col lg={3} md={6} sm={12} className="d-flex flex-column">
-                        <div className="my-3 d-flex flex-column justify-content-center align-items-center">
+                        <div className="my-1 d-flex flex-column justify-content-center align-items-center">
                             <FontAwesomeIcon className={styles.icon} icon={faTrophy} />
-                            <h4>Winner</h4>
+                            <h4 className={styles.title}>Winner</h4>
                         </div>
                         <div className="d-flex flex-column justify-content-center align-items-center">
                             <h6 className={styles.detail}>{campaign.typeOfGiveaway}</h6>
@@ -75,24 +75,6 @@ export default function AdminPageSectionContainer({ campaign }) {
                         </div>
                     </Col>
                 </Row>
-                {/* <Row className="d-flex align-items-start">
-                    <Col className="d-flex flex-column justify-content-center align-items-center">
-                        <h6 className={styles.detail}>{campaign.name}</h6>
-                        <h6 className={styles.detail}>{campaign.platform}</h6>
-                        <h6 className={styles.detail}>{campaign.status}</h6>
-                    </Col>
-                    <Col className="d-flex flex-column justify-content-center align-items-center">
-                        <h6 className={styles.detail}>{campaign.startDate}-{campaign.endDate}</h6>
-                    </Col>
-                    <Col className="d-flex flex-column justify-content-center align-items-center">
-                        <h6 className={styles.detail}> {campaign.reward} {campaign.rewardType}</h6>
-                    </Col>
-                    <Col className="d-flex flex-column justify-content-center align-items-center">
-                        <h6 className={styles.detail}>{campaign.typeOfGiveaway}</h6>
-                        <h6 className={styles.detail}>{campaign.winnerMetrics}</h6>
-                        <h6 className={styles.detail}>{campaign.numberOfWinners} Winners</h6>
-                    </Col>
-                </Row> */}
                 <Row>
                     <Col lg={12} className="d-flex justify-content-end mt-4">
                         <Button className={styles.navButton} onClick={onEditCampaign}>Edit Campaign</Button>

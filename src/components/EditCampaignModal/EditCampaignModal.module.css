@@ -1,11 +1,22 @@
-.label{
-    margin-top: 8px;
+.form{
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
+}
+
+.modalTitle{
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.modalBody{
+    padding-top: 8px !important;
 }
 
 .label{
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
     margin-top: 8px;
-}
-
-.formRow{
-    min-width: 50%;
 }

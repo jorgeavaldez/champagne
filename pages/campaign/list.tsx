@@ -45,9 +45,9 @@ function ListCampaigns() {
   const pastCampaigns = useMemo(() => campaigns.filter((c) => c.status === 'past'), []);
 
   return (
-    <AdminLayout title="All Campaigns">
+    <AdminLayout title="ALL CAMPAIGNS">
       
-      <Row className="w-100 mt-1">
+      <Row className="w-100 mt-lg-3">
         {campaigns.length <= 0 && <h6 className={`${styles.noDataBlack} mt-3`}>We could not find any campaigns.</h6>}
         {createdCampaigns.length > 0 &&
           <Col className="d-flex flex-column justify-content-start align-items-center">

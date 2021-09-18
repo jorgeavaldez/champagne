@@ -26,7 +26,7 @@ const events = [{
 function CampaignCalendar() {
 
     return (
-        <AdminLayout title="Calender">
+        <AdminLayout title="CAMPAIGN CALENDAR">
             <Row className='w-100'>
                 <Col lg={12}>
                     <AdminPageSectionContainer title="">
