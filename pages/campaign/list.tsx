@@ -2,7 +2,6 @@ import { useMemo } from "react";
 
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import CampaignCard from "../../src/components/CampaignCard";
 
@@ -46,37 +45,34 @@ function ListCampaigns() {
   const pastCampaigns = useMemo(() => campaigns.filter((c) => c.status === 'past'), []);
 
   return (
-    <Layout>
-      <AdminLayout title="All Campaigns">
+    <AdminLayout title="All Campaigns">
+      
+      <Row className="w-100 mt-1">
+        {campaigns.length <= 0 && <h6 className={`${styles.noDataBlack} mt-3`}>We could not find any campaigns.</h6>}
+        {createdCampaigns.length > 0 &&
+          <Col className="d-flex flex-column justify-content-start align-items-center">
+            <h5 className={styles.title}>CREATED</h5>
+            {createdCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+          </Col>
+        }
 
+        {activeCampaigns.length > 0 &&
+          <Col className="d-flex flex-column justify-content-start align-items-center">
+            <h5 className={styles.title}>ACTIVE</h5>
+            {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+          </Col>
+        }
 
-        <Row className="w-100 mt-3">
+        {pastCampaigns.length > 0 &&
+          <Col className="d-flex flex-column justify-content-start align-items-center">
+            <h5 className={styles.title}>PAST</h5>
+            {pastCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+          </Col>
+        }
 
-          {createdCampaigns &&
-            <Col className="d-flex flex-column justify-content-start align-items-center">
-              <h5 className={styles.title}>CREATED</h5>
-              {createdCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-            </Col>
-          }
+      </Row>
 
-          {activeCampaigns &&
-            <Col className="d-flex flex-column justify-content-start align-items-center">
-              <h5 className={styles.title}>ACTIVE</h5>
-              {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-            </Col>
-          }
-
-          {pastCampaigns &&
-            <Col className="d-flex flex-column justify-content-start align-items-center">
-              <h5 className={styles.title}>PAST</h5>
-              {pastCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-            </Col>
-          }
-
-        </Row>
-
-      </AdminLayout>
-    </Layout>
+    </AdminLayout>
   );
 }
 

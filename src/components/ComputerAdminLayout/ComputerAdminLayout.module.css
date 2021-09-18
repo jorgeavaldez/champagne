@@ -1,0 +1,14 @@
+#sidebar-container{
+    min-height: 100vh !important;
+    width: 100vw;
+    margin-left: -1rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#page-container {
+    min-width: 0;
+    width: 100%;
+}

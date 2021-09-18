@@ -1,26 +1,49 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { useMediaQuery } from "react-responsive";
+import { useEffect, useCallback, useState } from "react";
+import { Container } from "react-bootstrap";
+import ComputerAdminLayout from '../ComputerAdminLayout';
+import MobileAdminLayout from '../MobileAdminLayout';
 
-import Sidebar from '../SideNav';
-import MobileNav from '../MobileNav';
-import AdminHeader from '../AdminHeader';
-import AdminPageContainer from "../AdminPageContainer";
+import styles from './AdminLayout.module.css';
 
-export default function Layout({ title, children }) {
+const useMediaQuery = (width) => {
+    const [targetReached, setTargetReached] = useState(false);
 
-    const isSmallerThanIpad = useMediaQuery({ query: '(max-width: 768px)' });
+    const updateTarget = useCallback((e) => {
+        if (e.matches) {
+            setTargetReached(true);
+        } else {
+            setTargetReached(false);
+        }
+    }, []);
+
+    useEffect(() => {
+        const media = window.matchMedia(`(max-width: ${width}px)`)
+        media.addEventListener('change', e => updateTarget(e))
+
+        // Check on mount (callback is not called until a change occurs)
+        if (media.matches) {
+            setTargetReached(true)
+        }
+
+        return () => media.removeEventListener('change', e => updateTarget(e))
+    }, [])
+
+    return targetReached;
+};
+
+function AdminLayout({ title, children }) {
+    const isBreakpoint = useMediaQuery(976);
 
     return (
         <Container fluid>
-            <Row> 
-                {isSmallerThanIpad ? <MobileNav/> : <Col lg={2} id="sidebar-wrapper"><Sidebar/> </Col>}
-                <Col lg={10} md={12} id="page-content-wrapper" className="mt-lg-0 mt-3">
-                    {!isSmallerThanIpad && <AdminHeader />}
-                    <AdminPageContainer title={title}>
-                        {children}
-                    </AdminPageContainer>
-                </Col>
-            </Row>
+            {isBreakpoint ?
+                <MobileAdminLayout title={title} children={children} />
+                :
+                <ComputerAdminLayout title={title} children={children} />
+            }
         </Container>
+
     )
 }
+
+export default AdminLayout;

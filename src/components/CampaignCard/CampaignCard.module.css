@@ -23,9 +23,10 @@
 }
 
 .card{
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 8px;
     min-width: 18rem;
-    width: 100%;
+    width: 30%; 
+    flex: 1 0 30%; 
     background-color: #E5E5E5;
+    flex-grow: unset;
 }

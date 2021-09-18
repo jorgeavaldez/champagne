@@ -1,5 +1,6 @@
 .label{
-    color:white;
+    color:#6100FF;
+    font-weight: bold;
 }
 
 .data{
@@ -8,5 +9,13 @@
 
 .flexContainer{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(50%, auto));
+    grid-auto-rows: minmax(50px, max-content);
+    align-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+    .flexContainer{
+        grid-template-columns: none;
+    }
+  }

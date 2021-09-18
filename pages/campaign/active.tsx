@@ -2,9 +2,9 @@ import { useMemo } from "react";
 
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import CampaignCard from "../../src/components/CampaignCard";
+import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 
 import styles from '../../styles/pages/admin.module.css';
 
@@ -44,22 +44,16 @@ function ActiveCampaigns() {
     const activeCampaigns = useMemo(() => campaigns.filter((c) => c.status === 'active'), []);
 
     return (
-        <Layout>
-            <AdminLayout title="Active Campaigns">
-
-
-                <Row className="w-100 mt-3">
-
-                    {activeCampaigns &&
-                        <Col lg={12} className="d-flex flex-column justify-content-start align-items-center">
-                            {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-                        </Col>
-                    }
-
-                </Row>
-
-            </AdminLayout>
-        </Layout>
+        <AdminLayout title="Active Campaigns">
+            <Row>
+                <Col lg={12} className="mt-lg-3">
+                    <Row className={`d-flex justify-content-center justify-content-lg-between ${styles.cardContainer}`}>
+                        {activeCampaigns.length > 0 ? activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />) 
+                        : <h6 className={styles.noDataBlack}>There are no active campaigns.</h6>}
+                    </Row>
+                </Col>
+            </Row>
+        </AdminLayout>
     );
 }
 

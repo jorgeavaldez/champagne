@@ -1,5 +1,5 @@
 import styles from './Table.module.css';
-import { Table } from 'react-bootstrap';
+import { Table, Row } from 'react-bootstrap';
 
 const leads = [
     {
@@ -52,7 +52,7 @@ export default function LeadsTable() {
                 </tr>
             </thead>
             <tbody>
-                {leads.map(lead => 
+                {leads ? leads.map(lead => 
                 <tr>
                     <td>{lead.username}</td>
                     <td>{lead.platform}</td>
@@ -60,7 +60,7 @@ export default function LeadsTable() {
                     <td>{lead.numberOfInteractions}</td>
                     <td>{lead.lastDateofInteraction}</td>
                 </tr>
-               )}
+               ): <h6 className="p-2 mt-1">There is no data to display right now.</h6>}
             </tbody>
         </Table>
     )

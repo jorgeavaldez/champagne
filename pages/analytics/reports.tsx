@@ -1,12 +1,13 @@
 import { Row, Col } from 'react-bootstrap';
 
-import Layout from '../../src/components/Layout';
 import AdminLayout from '../../src/components/AdminLayout';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
 import CampaignCard from '../../src/components/CampaignCard';
 import StatsContainer from '../../src/components/StatsContainer';
+
+import styles from '../../styles/pages/admin.module.css';
 
 const campaigns = [
     {
@@ -67,54 +68,50 @@ const statsData = [
 
 function Reports() {
     return (
-        <Layout>
-            <AdminLayout title="Reports">
-                <Row className='w-100'>
+        <AdminLayout title="Reports">
+            <Row className='w-100'>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Running Total">
-                            <Col lg={12} className="w-100">
-                                <StatsContainer data={statsData}/>
-                            </Col>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Running Total">
+                    {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    {/* TODO: If we can get metric data add this back in */}
+                {/* TODO: If we can get metric data add this back in */}
 
-                    {/* <Col lg={12}>
+                {/* <Col lg={12}>
                         <AdminPageSectionContainer title="Key Metrics">
                             <Row className="w-100">
                             </Row>
                         </AdminPageSectionContainer>
                     </Col> */}
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Campaigns">
-                            <Row className="w-100">
-                                {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
-                            </Row>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Campaigns">
+                        <Row className={styles.cardContainer}>
+                            {campaigns ? campaigns.map(campaign => <CampaignCard campaign={campaign} />) : <h6 className={styles.noData}>We could not find any campaigns.</h6>}
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Posts">
-                            <Col className="w-100 d-flex flex-row">
-                                {posts.map(post => <PostCard post={post} />)}
-                            </Col>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Posts">
+                        <Row className={styles.cardContainer}>
+                            {posts ? posts.map(post => <PostCard post={post} />) : <h6 className={styles.noData}>We could not find any posts.</h6>}
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                    <Col lg={12}>
-                        <AdminPageSectionContainer title="Top Fans">
-                            <Row className="w-100">
-                                <FansTable />
-                            </Row>
-                        </AdminPageSectionContainer>
-                    </Col>
+                <Col lg={12}>
+                    <AdminPageSectionContainer title="Top Fans">
+                        <Row className="w-100">
+                            <FansTable />
+                        </Row>
+                    </AdminPageSectionContainer>
+                </Col>
 
-                </Row>
-            </AdminLayout>
-        </Layout>
+            </Row>
+        </AdminLayout>
     );
 }
 

@@ -1,3 +1,19 @@
 .title{
     color: #000000;
+    margin-top: 8px;
+}
+
+.cardContainer{
+    display: flex;
+    flex: wrap; 
+}
+
+.noData{
+    color: white;
+    text-align: center;
+}
+
+.noDataBlack{
+    color: black;
+    text-align: center;
 }
