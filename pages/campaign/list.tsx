@@ -48,22 +48,22 @@ function ListCampaigns() {
     <AdminLayout title="All Campaigns">
       
       <Row className="w-100 mt-1">
-
-        {createdCampaigns &&
+        {campaigns.length <= 0 && <h6 className={`${styles.noDataBlack} mt-3`}>We could not find any campaigns.</h6>}
+        {createdCampaigns.length > 0 &&
           <Col className="d-flex flex-column justify-content-start align-items-center">
             <h5 className={styles.title}>CREATED</h5>
             {createdCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
           </Col>
         }
 
-        {activeCampaigns &&
+        {activeCampaigns.length > 0 &&
           <Col className="d-flex flex-column justify-content-start align-items-center">
             <h5 className={styles.title}>ACTIVE</h5>
             {activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
           </Col>
         }
 
-        {pastCampaigns &&
+        {pastCampaigns.length > 0 &&
           <Col className="d-flex flex-column justify-content-start align-items-center">
             <h5 className={styles.title}>PAST</h5>
             {pastCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}

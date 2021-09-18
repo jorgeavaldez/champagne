@@ -73,7 +73,7 @@ function Reports() {
 
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Running Total">
-                        <StatsContainer data={statsData} />
+                    {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
                     </AdminPageSectionContainer>
                 </Col>
 
@@ -89,7 +89,7 @@ function Reports() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Top Campaigns">
                         <Row className={styles.cardContainer}>
-                            {campaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+                            {campaigns ? campaigns.map(campaign => <CampaignCard campaign={campaign} />) : <h6 className={styles.noData}>We could not find any campaigns.</h6>}
                         </Row>
                     </AdminPageSectionContainer>
                 </Col>
@@ -97,7 +97,7 @@ function Reports() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Top Posts">
                         <Row className={styles.cardContainer}>
-                            {posts.map(post => <PostCard post={post} />)}
+                            {posts ? posts.map(post => <PostCard post={post} />) : <h6 className={styles.noData}>We could not find any posts.</h6>}
                         </Row>
                     </AdminPageSectionContainer>
                 </Col>

@@ -7,3 +7,13 @@
     display: flex;
     flex: wrap; 
 }
+
+.noData{
+    color: white;
+    text-align: center;
+}
+
+.noDataBlack{
+    color: black;
+    text-align: center;
+}

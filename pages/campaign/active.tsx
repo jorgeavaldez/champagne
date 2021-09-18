@@ -48,7 +48,8 @@ function ActiveCampaigns() {
             <Row>
                 <Col lg={12} className="mt-lg-3">
                     <Row className={`d-flex justify-content-center justify-content-lg-between ${styles.cardContainer}`}>
-                        {activeCampaigns && activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />)}
+                        {activeCampaigns.length > 0 ? activeCampaigns.map(campaign => <CampaignCard campaign={campaign} />) 
+                        : <h6 className={styles.noDataBlack}>There are no active campaigns.</h6>}
                     </Row>
                 </Col>
             </Row>

@@ -1,5 +1,5 @@
 import styles from './Table.module.css';
-import { Table } from 'react-bootstrap';
+import { Table, Row } from 'react-bootstrap';
 
 const fans = [
     {
@@ -46,14 +46,14 @@ export default function FansTable() {
                 </tr>
             </thead>
             <tbody>
-                {fans.map(fan => 
-                <tr>
-                    <td>{fan.rank}</td>
-                    <td>{fan.username}</td>
-                    <td>{fan.numberOfInteractions}</td>
-                    <td>{fan.following}</td>
-                </tr>
-               )}
+                {fans ? fans.map(fan =>
+                    <tr>
+                        <td>{fan.rank}</td>
+                        <td>{fan.username}</td>
+                        <td>{fan.numberOfInteractions}</td>
+                        <td>{fan.following}</td>
+                    </tr>
+                ): <h6 className="p-2 mt-1">There is no data to display right now.</h6>}
             </tbody>
         </Table>
     )

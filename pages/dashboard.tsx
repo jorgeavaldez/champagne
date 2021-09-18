@@ -49,7 +49,6 @@ const postEvents = [{
   title: 'End Campaign Yeah'
 }];
 
-
 const campaignEvents = [{
   id: 1,
   start: '2021-09-12',
@@ -66,8 +65,6 @@ const campaignEvents = [{
   end: '2021-09-18',
   title: 'Near Campaign'
 }];
-
-
 
 function Dashboard() {
   const router = useRouter();
@@ -89,7 +86,7 @@ function Dashboard() {
         <Col lg={12}>
           <AdminPageSectionContainer title="While you were away">
             <Row className="w-100">
-              <StatsContainer data={statsData} />
+              {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>There is no data to display.</h6>}
             </Row>
           </AdminPageSectionContainer>
         </Col>
@@ -97,7 +94,7 @@ function Dashboard() {
           <AdminPageSectionContainer title="Active Campaigns">
 
             <Row className={styles.cardContainer}>
-              <CampaignCard campaign={campaign} />
+              {campaign ? <CampaignCard campaign={campaign} /> : <h6 className={styles.noData}>There are no active campaigns.</h6>}
             </Row>
           </AdminPageSectionContainer>
         </Col>
@@ -105,7 +102,7 @@ function Dashboard() {
         <Col lg={12}>
           <AdminPageSectionContainer title="Campaign Calender">
             <Col lg={12} className="w-100 weeklyCalendar">
-              <WeeklyCalendar events={campaignEvents} />
+              {campaignEvents ? <WeeklyCalendar events={campaignEvents} /> : <h6 className={styles.noData}>There are no campaigns scheduled this week.</h6>}
             </Col>
           </AdminPageSectionContainer>
         </Col>
@@ -113,7 +110,7 @@ function Dashboard() {
         <Col lg={12}>
           <AdminPageSectionContainer title="Post Calender">
             <Col lg={12} className="w-100 weeklyCalendar">
-              <WeeklyCalendar events={postEvents} />
+              {postEvents ? <WeeklyCalendar events={postEvents} /> : <h6 className={styles.noData}>There are no posts scheduled this week.</h6>}
             </Col>
           </AdminPageSectionContainer>
         </Col>

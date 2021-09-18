@@ -68,7 +68,6 @@ const events = [{
     title: 'End Campaign Yeah'
 }];
 
-
 function CampaignViewPage() {
 
     const router = useRouter();
@@ -81,7 +80,7 @@ function CampaignViewPage() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Post Calender">
                         <Col lg={12} className="w-100 weeklyCalendar">
-                            <WeeklyCalendar events={events} />
+                            {events ? <WeeklyCalendar events={events} />: <h6 className={styles.noData}>We could not find any events.</h6>}
                         </Col>
                     </AdminPageSectionContainer>
                 </Col>
@@ -89,7 +88,7 @@ function CampaignViewPage() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Running Total">
                         <Row className="w-100">
-                            <StatsContainer data={statsData} />
+                            {statsData ? <StatsContainer data={statsData} /> : <h6 className={styles.noData}>We could not find any data.</h6>}
                         </Row>
                     </AdminPageSectionContainer>
                 </Col>
@@ -106,7 +105,7 @@ function CampaignViewPage() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Top Posts">
                         <Row className={styles.cardContainer}>
-                            {posts.map(post => <PostCard post={post} />)}
+                            {posts ? posts.map(post => <PostCard post={post} />) : <h6 className={styles.noData}>We could not find any posts.</h6>}
                         </Row>
                     </AdminPageSectionContainer>
                 </Col>

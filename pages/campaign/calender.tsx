@@ -4,6 +4,8 @@ import AdminLayout from '../../src/components/AdminLayout';
 import MonthlyCalendar from '../../src/components/Calendar/MonthlyCalendar';
 import AdminPageSectionContainer from "../../src/components/AdminPageSectionContainer";
 
+import styles from '../../styles/pages/admin.module.css';
+
 const events = [{
     id: 1,
     start: '2021-09-12',
@@ -21,7 +23,6 @@ const events = [{
     title: 'Near Campaign'
 }];
 
-
 function CampaignCalendar() {
 
     return (
@@ -30,7 +31,7 @@ function CampaignCalendar() {
                 <Col lg={12}>
                     <AdminPageSectionContainer title="">
                         <Col lg={12} className="w-100">
-                            <MonthlyCalendar events={events} />
+                            {events ? <MonthlyCalendar events={events} /> : <h6 className={styles.noData}> We could not find any events. </h6>}
                         </Col>
                     </AdminPageSectionContainer>
                 </Col>
