@@ -7,15 +7,21 @@ import PostCard from '../../src/components/PostCard';
 import FansTable from '../../src/components/Tables/FansTable';
 import StatsContainer from '../../src/components/StatsContainer';
 import WeeklyCalendar from '../../src/components/Calendar/WeeklyCalendar';
+import CampaignDetails from '../../src/components/CampaignDetails';
 
 import styles from '../../styles/pages/admin.module.css';
 
 const campaign = {
-    name: "Twitter",
-    reward: "Near Tokens",
+    name: "Twitter Campaign",
+    platform: "Twitter",
+    rewardType: "Near Tokens",
+    reward: "10",
+    typeOfGiveaway: "Hashtag Giveaway",
+    winnerMetrics: "Most engaged",
+    numberOfWinners: "10",
     startDate: "09/01/21",
     endDate: "09/06/21",
-    status: "created",
+    status: "Created",
 }
 
 const posts = [
@@ -73,14 +79,21 @@ function CampaignViewPage() {
     const router = useRouter();
     const { id } = router.query;
 
+
     return (
         <AdminLayout title={`Campaign Details ${id}`}>
-            <Row className='w-100'>
+            <Row className={`w-100 {styles.allElements}`}>
+
+                <Col lg={12} className={styles.blob}>
+                    <Row>
+                        {campaign ? <CampaignDetails campaign={campaign} /> : <h6 className={styles.noDataBlack}>We could not find campaign details.</h6>}
+                    </Row>
+                </Col>
 
                 <Col lg={12}>
                     <AdminPageSectionContainer title="Post Calender">
                         <Col lg={12} className="w-100 weeklyCalendar">
-                            {events ? <WeeklyCalendar events={events} />: <h6 className={styles.noData}>We could not find any events.</h6>}
+                            {events ? <WeeklyCalendar events={events} /> : <h6 className={styles.noData}>We could not find any events.</h6>}
                         </Col>
                     </AdminPageSectionContainer>
                 </Col>

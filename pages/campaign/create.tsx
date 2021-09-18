@@ -69,8 +69,10 @@ function CreateCampaign() {
 
           <Form.Label className={styles.label}>Type of Giveaway</Form.Label>
           <Form.Select defaultValue="Choose.." {...register("giveaway", { required: true })}>
-            <option>Choose...</option>
-            <option>...</option>
+            <option>Comment Giveaway</option>
+            <option>Like and Repost Giveaway</option>
+            <option>Hashtag Giveaway</option>
+            <option>Follower Giveaway</option>
           </Form.Select>
           {errors.giveaway && <Row><Form.Text>This field is required</Form.Text></Row>}
 
@@ -90,11 +92,11 @@ function CreateCampaign() {
 
           <Form.Label className={styles.label}>Metrics for Winner</Form.Label>
           <Form.Select defaultValue="Choose.." {...register("metrics", { required: true })}>
-            <option>Choose...</option>
-            <option>...</option>
+            <option>Most Engaged</option>
+            <option>Random</option>
           </Form.Select>
           {errors.metrics && <Row><Form.Text>This field is required</Form.Text></Row>}
-          Î
+          
           <Form.Label className={styles.label}>Number of Winners</Form.Label>
           <Form.Control type="number" min="1" max="100" defaultValue="" {...register("numberOfWinners", { required: true })} />
           {errors.numberOfWinners && <Row><Form.Text>This field is required</Form.Text></Row>}
