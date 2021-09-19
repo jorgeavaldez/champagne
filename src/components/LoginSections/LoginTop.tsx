@@ -10,10 +10,10 @@ export default function LoginTop() {
     return (
         <Container fluid className={styles.loginContainer}>
             <Row className={styles.topRow}>
-                <Col lg={6} sm={12}>
+                <Col xs={{span: 12, order: 2}} md={{span: 6, order: 1}}>
                     <LoginSection />
                 </Col>
-                <Col lg={6} sm={12} className={styles.getStarted}>
+                <Col xs={{span: 12, order: 1}} md={{span: 6, order: 2}} className={styles.getStarted}>
                     <GetStarted />
                 </Col>
             </Row>

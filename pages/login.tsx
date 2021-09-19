@@ -1,8 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 
 import LoginLayout from '../src/components/LoginLayout';
-import LoginTop from "../src/components/LoginSections/LoginTop";
-import LoginSteps from '../src/components/LoginSections/LoginSteps';
+import Login from '../src/components/Login'
 
 import styles from '../styles/pages/home.module.css';
 
@@ -10,10 +9,9 @@ export default function LoginPage() {
 
   return (
     <LoginLayout>
-      <Container fluid>
+      <Container fluid className="p-0">
         <Row className={styles.homeContainer}>
-            <LoginTop />
-            <LoginSteps />
+            <Login/>
         </Row>
       </Container>
     </LoginLayout>
