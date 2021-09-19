@@ -13,6 +13,7 @@ function HomeLayout({ children }) {
             <div className={styles.headerBackground}/>
             <div className={styles.background}/>
             {children}
+            <div className={styles.footerBackground} />
             <Footer />
         </Container>
 

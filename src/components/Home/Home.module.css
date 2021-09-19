@@ -41,3 +41,9 @@
     margin: 0;
     padding: 32px;
 }
+
+@media only screen and (max-width: 600px) {
+    .mainContainer {
+        margin-top: 100px;
+    }
+}

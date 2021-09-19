@@ -5,7 +5,7 @@ import PlatformCards from '../PlatformCards';
 
 export default function Platform() {
     return (
-        <Container fluid id="Platform">
+        <Container fluid id="platform">
             <Row>
                 <Col lg={6} sm={12} className={styles.textContainer}>
                     <Row>
@@ -15,7 +15,7 @@ export default function Platform() {
                         <h6>Our tool helps Artists, Creators, and Influencers define real-time marketing strategies.</h6>
                     </Row>
                 </Col>
-                <Col lg={12}>
+                <Col lg={12} >
                     <PlatformCards />
                 </Col>
             </Row>

@@ -20,7 +20,19 @@
     filter: blur(100px);
 }
 
+.footerBackground {
+    /* Vector */
+    position: absolute;
+    width: 848px;
+    height: 654px;
+    left: -131px;
+    top: 1900px;
+    background: linear-gradient(90deg, #FBED96 0%, #ABECD6 100%);
+    filter: blur(100px);
+}
+
 .layout {
     overflow: hidden;
     padding: 0;
+    background-color: #EFFFFA;
 }

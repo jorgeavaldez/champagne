@@ -5,7 +5,7 @@ import FeatureCards from '../FeatureCards';
 
 export default function Features() {
     return (
-        <Container fluid id="Platform">
+        <Container fluid id="features">
             <Row className={styles.purpleRow}>
                 <Col lg={6} sm={12} className={styles.textContainer}>
                     <Row>

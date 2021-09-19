@@ -7,6 +7,7 @@ import Rewards from "./Rewards";
 import WhySection from "../HomeSection/WhySection";
 import Features from './Features';
 import SparkleSection from '../HomeSection/SparkleSection'
+import GetStarted from "./GetStarted";
 
 import styles from './Home.module.css';
 
@@ -20,6 +21,7 @@ export default function HomePage() {
             <WhySection />
             <Features />
             <SparkleSection />
+            <GetStarted />
         </Container>
     )
 }

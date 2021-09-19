@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 
 export default function Rewards() {
     return (
-        <Container fluid id="Rewards" className={styles.purpleContainer}>
+        <Container fluid id="rewards" className={styles.purpleContainer}>
             <Row>
                 <Col lg={12}>
                     <RewardCards />

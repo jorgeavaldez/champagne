@@ -1,13 +1,25 @@
-.logo{
+.logo {
     font-family: Hanson;
     font-style: normal;
     font-weight: bold;
     margin: 8px 0px 8px 0px;
 }
 
-.footerLink{
+.footerLink {
     font-family: Space Grotesk;
     font-style: normal;
     font-weight: bold;
     color: white;
+}
+
+.footer {
+    background-color: #6100FF !important;
+    z-index: 20;
+}
+
+@media only screen and (max-width: 600px) {
+    .footerLink {
+        font-size: 16px;
+        text-align: center;
+    }
 }
