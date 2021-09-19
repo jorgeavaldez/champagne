@@ -11,9 +11,6 @@ import { Near, Contract, WalletConnection } from "near-api-js";
 import getConfig from "./config";
 import { initContract, login as nearLogin, logout as nearLogout } from "./";
 
-// TODO: add idx stuff from ceramic to store campaign data
-// import { authenticate } from "../ceramic";
-
 // const { networkId } = getConfig(process.env.NODE_ENV || 'development');
 const { networkId } = getConfig('development');
 
@@ -24,6 +21,7 @@ interface NearCtx {
 
   wallet: WalletConnection;
   contract: Contract;
+  near: Near;
   error: Error;
   signedIn: boolean;
 
@@ -38,6 +36,7 @@ export const NearContext = createContext<NearCtx>({
   networkId,
   wallet: null,
   contract: null,
+  near: null,
   error: null,
   signedIn: false,
 
@@ -63,27 +62,14 @@ export default function NearProvider({ children }) {
   }, [connected]);
 
   const logout = useCallback(
-    (next) => {
+    () => {
       if (connected) {
-        nearLogout(walletRef.current, next);
+        nearLogout(walletRef.current);
+        setSignedIn(walletRef.current.isSignedIn());
       }
     },
     [connected]
   );
-
-  // TODO: figure out ceramic
-  /* 
-  const ceramicLogin = useCallback(
-    () => {
-      if (accountId && nearRef.current) {
-        getPublicKey(walletRef.current, accountId).then(({ keyPair, publicKey }) => authenticate(keyPair, publicKey).then((res) => {
-          console.log("res", res);
-        }));
-      }
-    },
-    [accountId]
-  );
- */
 
   useEffect(() => {
     const init = async () => {
@@ -116,7 +102,7 @@ export default function NearProvider({ children }) {
 
     wallet: walletRef.current,
     contract: contractRef.current,
-    // ceramicLogin,
+    near: nearRef.current,
     error,
     signedIn,
 

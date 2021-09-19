@@ -1,4 +1,3 @@
-import { Provider } from 'next-auth/client';
 import Head from "next/head";
 
 import '@fullcalendar/common/main.css'
@@ -19,11 +18,9 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Provider session={pageProps.session}>
-        <NearProvider>
-            <Component {...pageProps} />
-        </NearProvider>
-      </Provider>
+      <NearProvider>
+        <Component {...pageProps} />
+      </NearProvider>
     </>
   );
 }

@@ -61,11 +61,8 @@ export async function getPublicKey(connection: WalletConnection, accountId) {
   return { keyPair, publicKey };
 }
 
-export function logout(connection, next) {
+export function logout(connection) {
   connection.signOut();
-
-  // reload page
-  next();
 }
 
 export function login(connection: WalletConnection) {
@@ -74,5 +71,13 @@ export function login(connection: WalletConnection) {
   // This works by creating a new access key for the user's account and storing
   // the private key in localStorage.
   // connection.requestSignIn(nearConfig.contractName);
-  connection.requestSignIn(nearConfig.contractName);
+  connection.requestSignIn(nearConfig.contractName, "Champagne", `${window.location.protocol}//${window.location.host}/wallet/login`);
+}
+
+/*
+{ "account_id": "delvaze.testnet", "public_key": "ed25519:4yDdApocUcVSr9w4wi6pvXH38v94CR19Fq4XnGKusTsq", "all_keys": "ed25519:HdG7C359g3trqbKLWwsjcGBSqfEA5mMdFmidQZt2pdh5" }
+*/
+export interface LoginCallbackQueryParams {
+  account_id: string | string[];
+  public_key: string | string[];
 }
