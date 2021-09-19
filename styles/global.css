@@ -6,7 +6,7 @@
     font-display: swap;
   }
   @font-face {
-    font-family: "Nexa";
+    font-family: "Nexa Bold";
     src: url("/fonts/Nexa/Nexa-Bold.otf");
     font-style: normal;
     font-weight: 700;
@@ -14,7 +14,7 @@
   }
 
   @font-face {
-    font-family: "Nexa";
+    font-family: "Nexa Light";
     src: url("/fonts/Nexa/Nexa-Light.otf");
     font-style: normal;
     font-weight: 400;
@@ -22,7 +22,7 @@
   }
 
   @font-face {
-    font-family: "SpaceGrotesk";
+    font-family: "Space Grotesk";
     src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Bold.tff");
     font-style: normal;
     font-weight: 700;
@@ -30,7 +30,7 @@
   }
 
   @font-face {
-    font-family: "SpaceGrotesk";
+    font-family: "Space Grotesk";
     src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Light.tff");
     font-style: normal;
     font-weight: 400;
