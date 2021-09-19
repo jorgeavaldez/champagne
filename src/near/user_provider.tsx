@@ -6,15 +6,16 @@ import React, {
   useRef,
 } from "react";
 
-import { Near, Contract, WalletConnection } from "near-api-js";
+import { Near, KeyPair, Contract, WalletConnection, keyStores } from "near-api-js";
 
 import getConfig from "./config";
-import { initLinkdropContract } from "./";
+import { initUserContract } from "./";
+import { useNear } from "./hooks";
 
 // const { networkId } = getConfig(process.env.NODE_ENV || 'development');
 const { networkId, contractName } = getConfig("development");
 
-interface NearCtx {
+interface LinkdropUserCtx {
   networkId: string | null;
   connected: boolean;
   accountId: string | null;
@@ -24,13 +25,15 @@ interface NearCtx {
   near: Near;
   error: Error;
   signedIn: boolean;
+  keysSet: boolean;
+  keyStore: keyStores.BrowserLocalStorageKeyStore,
 
+  setKeys: Function;
   login: Function;
   logout: Function;
-  ceramicLogin?: Function;
 }
 
-export const NearContext = createContext<NearCtx>({
+export const LinkdropUserContext = createContext<LinkdropUserCtx>({
   connected: false,
   accountId: null,
   networkId,
@@ -39,20 +42,26 @@ export const NearContext = createContext<NearCtx>({
   near: null,
   error: null,
   signedIn: false,
+  keysSet: false,
+  keyStore: null,
 
+  setKeys: () => {},
   login: () => {},
   logout: () => {},
 });
 
-export default function NearProvider({ children }) {
+export default function LinkdropUserProvider({ children }) {
+  const { accountId } = useNear();
   const [connected, setConnected] = useState(false);
-  const [accountId, setAccountId] = useState(null);
+  const [linkdropUserAccountId, setLinkdropUserAccountId] = useState(null);
   const [signedIn, setSignedIn] = useState(false);
   const [error, setError] = useState(null);
+  const [keysSet, setKeysSet] = useState(false);
 
   const walletRef = useRef<WalletConnection>(null);
   const contractRef = useRef<Contract>(null);
   const nearRef = useRef<Near>(null);
+  const keyStoreRef = useRef<keyStores.BrowserLocalStorageKeyStore>(null);
 
   const login = useCallback(() => {
     if (connected) {
@@ -74,21 +83,24 @@ export default function NearProvider({ children }) {
   useEffect(() => {
     const init = async () => {
       try {
-        const { wallet, accountId, contract, near } =
-          await initLinkdropContract();
+        const { linkdropAccountId, wallet, contract, near, keyStore } =
+          await initUserContract(accountId);
 
         walletRef.current = wallet;
         contractRef.current = contract;
         nearRef.current = near;
-        setAccountId(accountId);
+        keyStoreRef.current = keyStore;
+        setLinkdropUserAccountId(linkdropAccountId);
         setConnected(true);
       } catch (err) {
         setError(err);
       }
     };
 
-    init();
-  }, []);
+    if (accountId) {
+      init();
+    }
+  }, [accountId]);
 
   useEffect(() => {
     if (connected && !error) {
@@ -96,20 +108,37 @@ export default function NearProvider({ children }) {
     }
   }, [connected, error]);
 
+  const setKeys = useCallback((keys) => {
+    keyStoreRef.current.setKey(
+      networkId,
+      linkdropUserAccountId,
+      KeyPair.fromString(keys.secretKey),
+    ).then(() => {
+      setKeysSet(true);
+    });
+  }, [linkdropUserAccountId]);
+
   const ctx = {
     networkId,
     connected,
-    accountId,
+    accountId: linkdropUserAccountId,
 
     wallet: walletRef.current,
     contract: contractRef.current,
     near: nearRef.current,
+    keyStore: keyStoreRef.current,
     error,
     signedIn,
+    setKeys,
+    keysSet,
 
     login,
     logout,
   };
 
-  return <NearContext.Provider value={ctx}>{children}</NearContext.Provider>;
+  return (
+    <LinkdropUserContext.Provider value={ctx}>
+      {children}
+    </LinkdropUserContext.Provider>
+  );
 }

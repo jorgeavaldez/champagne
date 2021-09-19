@@ -1,5 +1,13 @@
 version: '3.7'
 services:
+  contracts:
+    command: ./build.sh
+    build:
+      context: ./contracts.near-linkdrop
+      dockerfile: Dockerfile
+    volumes:
+      - ./contracts.near-linkdrop:/app
+
   web:
     build:
       context: ./
