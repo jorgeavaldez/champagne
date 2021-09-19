@@ -6,7 +6,7 @@ export default function HomeHeader() {
 
     return (
         <Navbar id="nav" expand="lg" className={`px-4 ${styles.nav}`}>
-            <Navbar.Brand href="#home" className={styles.logo}>//CHAMPANGE</Navbar.Brand>
+            <Navbar.Brand href="#home" className={styles.logo}>//CHAMPAGNE</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-center justify-content-lg-end">
                 <Nav className="mx-3">
