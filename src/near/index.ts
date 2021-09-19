@@ -1,49 +1,56 @@
 import { connect, Contract, keyStores, WalletConnection } from "near-api-js";
-import * as uint8arrays from 'uint8arrays';
+import { getLinkdropUserAccountId } from "./helpers";
 
 import getConfig from "./config";
 
 declare module "near-api-js" {
  class Contract {
-   get_greeting(options: any): Promise<string>;
-   set_greeting(options: any): Promise<undefined>;
+   create_user_account(...options: any[]): Promise<undefined>;
+   create_near_campaign(...options: any[]): Promise<undefined>;
  }
 }
 
 // const nearConfig = getConfig(process.env.NODE_ENV || "development");
 const nearConfig = getConfig("development");
 
-export async function initContract() {
-  const near = await connect(
-    Object.assign(
-      {
-        deps: {
-          keyStore: new keyStores.BrowserLocalStorageKeyStore(),
-        },
-      },
-      nearConfig
-    )
+
+export async function initUserContract(walletAccountId) {
+  const linkdropAccountId = getLinkdropUserAccountId(walletAccountId);
+  const { near, wallet, keyStore } = await initNearShit();
+
+  const contract = new Contract(
+    wallet.account(),
+    linkdropAccountId,
+    {
+      changeMethods: ["create_near_campaign"],
+      viewMethods: [],
+    }
   );
 
-  // Initializing Wallet based Account. It can work with NEAR testnet wallet that
-  // is hosted at https://wallet.testnet.near.org
-  const wallet = new WalletConnection(near, "champagne");
+  return {
+    near,
+    wallet,
+    linkdropAccountId,
+    contract,
+    keyStore,
+  };
+}
 
-  // Getting the Account ID. If still unauthorized, it's just empty string
+export async function initLinkdropContract() {
+  const { near, wallet } = await initNearShit();
+
   const accountId = wallet.getAccountId();
 
-  // Initializing our contract APIs by contract name and configuration
   const contract = new Contract(
     wallet.account(),
     nearConfig.contractName,
     {
-      // View methods are read only. They don't modify the state, but usually return some value.
-      viewMethods: ["get_greeting"],
-      // Change methods can modify the state. But you don't receive the returned value when called.
-      changeMethods: ["set_greeting"],
+      changeMethods: ["create_user_account"],
+      viewMethods: [],
     }
   );
 
+  console.log('near', nearConfig.contractName);
   return {
     near,
     wallet,
@@ -52,32 +59,20 @@ export async function initContract() {
   };
 }
 
-// NOTE: for ceramic
-export async function getPublicKey(connection: WalletConnection, accountId) {
-  console.log(nearConfig.networkId);
-  const keyPair = await connection._keyStore.getKey(nearConfig.networkId, accountId);
-  const publicKey = keyPair.getPublicKey().toString();
+export async function initNearShit() {
+  const keyStore = new keyStores.BrowserLocalStorageKeyStore();
+  const near = await connect({
+    ...nearConfig,
+    deps: {
+      keyStore,
+    },
+  });
 
-  return { keyPair, publicKey };
-}
+  const wallet = new WalletConnection(near, "champagne");
 
-export function logout(connection) {
-  connection.signOut();
-}
-
-export function login(connection: WalletConnection) {
-  // Allow the current app to make calls to the specified contract on the
-  // user's behalf.
-  // This works by creating a new access key for the user's account and storing
-  // the private key in localStorage.
-  // connection.requestSignIn(nearConfig.contractName);
-  connection.requestSignIn(nearConfig.contractName, "Champagne", `${window.location.protocol}//${window.location.host}/wallet/login`);
-}
-
-/*
-{ "account_id": "delvaze.testnet", "public_key": "ed25519:4yDdApocUcVSr9w4wi6pvXH38v94CR19Fq4XnGKusTsq", "all_keys": "ed25519:HdG7C359g3trqbKLWwsjcGBSqfEA5mMdFmidQZt2pdh5" }
-*/
-export interface LoginCallbackQueryParams {
-  account_id: string | string[];
-  public_key: string | string[];
+  return {
+    near,
+    wallet,
+    keyStore,
+  };
 }

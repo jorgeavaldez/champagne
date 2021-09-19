@@ -20,7 +20,13 @@ handler
   )
   .get(
     (req: NextApiRequest, res: NextApiResponse) => {
-      res.json({ wallet: req.user });
+      if (!req.user) {
+        res.status(401).end();
+      }
+
+      else {
+        res.json({ wallet: req.user });
+      }
     }
   );
 

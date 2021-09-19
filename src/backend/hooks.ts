@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSWR, { useSWRConfig } from "swr";
 import { useNear } from "src/near/hooks";
 
-export const WALLET_ACCOUNT_ENDPOINT = "/api/auth/wallet";
+export const WALLET_ACCOUNT_ENDPOINT = "/api/auth/wallet/";
 export const fetcher = (url) => fetch(url).then((r) => r.json());
 
 export function useLogin() {
@@ -52,6 +52,7 @@ export function useLogin() {
           .then((res) => {
             setLoginAttempts(loginAttempts + 1);
             mutate(WALLET_ACCOUNT_ENDPOINT);
+            router.push("/wallet/linkdrop");
           })
           .catch((err) => {
             setLoginAttempts(loginAttempts + 1);

@@ -3,12 +3,13 @@ import { NextApiRequest, NextApiResponse } from "next";
 import morgan from 'morgan';
 import session from "./session";
 import passport from "./passport";
+import { WalletAccount } from ".prisma/client";
 
 declare module "next" {
   interface NextApiRequest {
     body: any;
     session: any;
-    user: any;
+    user: WalletAccount;
     logout: Function;
   }
 }

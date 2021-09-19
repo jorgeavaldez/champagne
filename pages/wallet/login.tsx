@@ -4,8 +4,10 @@ import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useLogin, useLogout } from "src/backend/hooks";
 import Layout from "src/components/Layout";
 import AdminLayout from "src/components/AdminLayout";
+import { useRouter } from "next/router";
 
 export default function WalletLogin() {
+  const router = useRouter();
   const { login, account } = useLogin();
   const logout = useLogout();
 
@@ -16,6 +18,10 @@ export default function WalletLogin() {
   const onLogout = () => {
     logout();
   };
+
+  if (account.accountId) {
+    router.replace("/wallet/linkdrop/");
+  }
 
   return (
     <Layout>
