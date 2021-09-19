@@ -10,11 +10,11 @@ export default function HomeHeader() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-center justify-content-lg-end">
                 <Nav className="mx-3">
-                    <Nav.Link className={styles.navLink} href="#platform">Platform</Nav.Link>
-                    <Nav.Link className={styles.navLink} href="#rewards">Rewards</Nav.Link>
-                    <Nav.Link className={styles.navLink} href="#features">Features</Nav.Link>
-                    <Nav.Link className={styles.navLink} href="/login">Sign In</Nav.Link>
-                    <Button href="/SignUp" className={styles.navLink}>Sign Up</Button>
+                    <Nav.Link className={styles.navLink} href="/#platform">Platform</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/#rewards">Rewards</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/#features">Features</Nav.Link>
+                    <Nav.Link className={styles.navLink} href="/dashboard">Sign In</Nav.Link>
+                    <Button href="/login" className={styles.navLink}>Sign Up</Button>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
