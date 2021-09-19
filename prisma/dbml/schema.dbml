@@ -2,60 +2,50 @@
 //// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 //// ------------------------------------------------------
 
-Table Account {
+Table SocialAccount {
   id String [pk]
-  userId String [not null]
   providerType String [not null]
   providerId String [not null]
   providerAccountId String [not null]
+  oauthToken String
+  oauthTokenSecret String
   refreshToken String
   accessToken String
   accessTokenExpires DateTime
   createdAt DateTime [default: `now()`, not null]
   updatedAt DateTime [not null]
-  user User [not null]
+  walletAccountId String [not null]
+  walletAccount WalletAccount [not null]
 
   indexes {
-    (providerId, providerAccountId) [unique]
+    (providerId, providerType, walletAccountId) [unique]
   }
 }
 
-Table Session {
-  id String [pk]
-  userId String [not null]
-  expires DateTime [not null]
-  sessionToken String [unique, not null]
-  accessToken String [unique, not null]
-  createdAt DateTime [default: `now()`, not null]
-  updatedAt DateTime [not null]
-  user User [not null]
+Table Campaign {
+  accountId String [pk]
+  type String [not null]
+  linkdropAccountId String [not null]
+  linkdropAccount LinkdropAccount [not null]
 }
 
-Table User {
-  id String [pk]
-  name String
-  email String [unique]
-  emailVerified DateTime
-  image String
-  createdAt DateTime [default: `now()`, not null]
-  updatedAt DateTime [not null]
-  accounts Account [not null]
-  sessions Session [not null]
+Table LinkdropAccount {
+  publicKey String [unique, not null]
+  accountId String [pk]
+  walletAccount WalletAccount [not null]
+  walletAccountId String [not null]
+  campaigns Campaign [not null]
 }
 
-Table VerificationRequest {
-  id String [pk]
-  identifier String [not null]
-  token String [unique, not null]
-  expires DateTime [not null]
-  createdAt DateTime [default: `now()`, not null]
-  updatedAt DateTime [not null]
-
-  indexes {
-    (identifier, token) [unique]
-  }
+Table WalletAccount {
+  publicKey String [unique, not null]
+  accountId String [pk]
+  linkdropAccount LinkdropAccount
+  socialAccounts SocialAccount [not null]
 }
 
-Ref: Account.userId > User.id
+Ref: SocialAccount.walletAccountId > WalletAccount.accountId
 
-Ref: Session.userId > User.id
+Ref: Campaign.linkdropAccountId > LinkdropAccount.accountId
+
+Ref: LinkdropAccount.walletAccountId - WalletAccount.accountId

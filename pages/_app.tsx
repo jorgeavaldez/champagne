@@ -1,4 +1,3 @@
-import { Provider } from 'next-auth/client';
 import Head from "next/head";
 
 import '@fullcalendar/common/main.css'
@@ -11,7 +10,8 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 import "../styles/global.css";
 
-import NearProvider from "../src/near/provider";
+import NearProvider from "src/near/provider";
+import LinkdropUserProvider from "src/near/user_provider";
 
 export default function App({ Component, pageProps }) {
   return (
@@ -19,11 +19,11 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Provider session={pageProps.session}>
-        <NearProvider>
-            <Component {...pageProps} />
-        </NearProvider>
-      </Provider>
+      <NearProvider>
+        <LinkdropUserProvider>
+          <Component {...pageProps} />
+        </LinkdropUserProvider>
+      </NearProvider>
     </>
   );
 }
