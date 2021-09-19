@@ -6,3 +6,7 @@
 .homeContainer>* {
     z-index: 20;
 }
+
+.overflow {
+    overflow: hidden;
+}

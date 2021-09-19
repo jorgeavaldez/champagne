@@ -21,7 +21,9 @@ export default function HomePage() {
             <WhySection />
             <Features />
             <SparkleSection />
-            <GetStarted />
+            <div className="mb-5">
+                <GetStarted />
+            </div>
         </Container>
     )
 }

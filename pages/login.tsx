@@ -8,12 +8,14 @@ import styles from '../styles/pages/home.module.css';
 export default function LoginPage() {
 
   return (
-    <LoginLayout>
-      <Container fluid className="p-0">
-        <Row className={styles.homeContainer}>
-            <Login/>
-        </Row>
-      </Container>
-    </LoginLayout>
+    <div className={styles.overflow}>
+      <LoginLayout>
+        <Container fluid className="p-0">
+          <Row className={styles.homeContainer}>
+            <Login />
+          </Row>
+        </Container>
+      </LoginLayout>
+    </div>
   );
 }

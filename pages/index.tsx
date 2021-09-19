@@ -12,9 +12,10 @@ export default function HomePage() {
   const { signedIn, accountId, networkId } = useNear();
 
   return (
-    <HomeLayout>
-      <Container fluid>
-        <Row className={styles.homeContainer}>
+    <div className={styles.overflow}>
+      <HomeLayout>
+        <Container fluid>
+          <Row className={styles.homeContainer}>
             <Home />
 
             {/* {signedIn && (
@@ -37,8 +38,9 @@ export default function HomePage() {
           </p>
         </>
       )} */}
-        </Row>
-      </Container>
-    </HomeLayout>
+          </Row>
+        </Container>
+      </HomeLayout>
+    </div>
   );
 }
