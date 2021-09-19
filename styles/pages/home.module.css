@@ -9,4 +9,5 @@
 
 .overflow {
     overflow: hidden;
+    position: relative;
 }
