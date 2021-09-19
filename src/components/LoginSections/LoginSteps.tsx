@@ -26,7 +26,7 @@ export default function LoginSteps() {
                     <h2>Create your Champange Account.</h2>
                     <p>After you sign in your wallet, <a className={styles.link} href="/">create</a> a Champange Account</p>
                     <p>If you already have a Champange Account, <a className={styles.link} href="/dashboard">log in</a> with your Champange seed phrase</p>
-4                </Col>
+                </Col>
             </Row>
             <Row className={styles.stepRow}>
                 <Col lg={2} sm={12}>
