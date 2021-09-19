@@ -40,6 +40,11 @@
     text-align: center;
 }
 
+.purpleContainer {
+    background-color: #6100FF;
+    width: max-content;
+}
+
 @media only screen and (max-width: 600px) {
     .sectionContainer {
         width: 100%;

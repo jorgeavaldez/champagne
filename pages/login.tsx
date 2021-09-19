@@ -1,75 +1,21 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { useNear } from "../src/near/hooks";
+import { Container, Row, Col } from 'react-bootstrap';
 
-import { Row, Col, Button } from 'react-bootstrap';
+import LoginLayout from '../src/components/LoginLayout';
+import LoginTop from "../src/components/LoginSections/LoginTop";
+import LoginSteps from '../src/components/LoginSections/LoginSteps';
 
-import AdminLayout from '../src/components/AdminLayout';
-import AdminPageSectionContainer from "../src/components/AdminPageSectionContainer";
-import CampaignCard from "../src/components/CampaignCard";
-import SchedulePostModal from '../src/components/SchedulePostModal';
+import styles from '../styles/pages/home.module.css';
 
-function LoginPage() {
-  const router = useRouter();
-
-  const {
-    signedIn,
-    login,
-  } = useNear();
-
-  useEffect(() => {
-    if (signedIn) {
-      router.replace('/');
-    }
-  }, [signedIn, router]);
-
-  const onLoginClick = () => {
-    login();
-  };
-
-  const [schedulePostOpen, setSchedulePostOpen] = useState(false);
-
-  const onOpenSchedulePost = () => {
-    setSchedulePostOpen(true);
-  };
-
-  const onCloseSchedulePost = () => {
-    setSchedulePostOpen(false);
-  }
-
-  const campaign = {
-    name: "Twitter",
-    reward: "Near Tokens",
-    startDate: "09/01/21",
-    endDate: "09/06/21",
-    status: "created",
-  }
+export default function LoginPage() {
 
   return (
-    <AdminLayout title="Welcome Back">
-      {schedulePostOpen && <SchedulePostModal open={schedulePostOpen} close={onCloseSchedulePost} />}
-      <Row className='w-100'>
-
-        <Col lg={12}>
-          {/* TODO: delete this probabaly */}
-          <AdminPageSectionContainer title="While you were away">
-            <Row className="w-100">
-
-            </Row>
-          </AdminPageSectionContainer>
-        </Col>
-
-        <Col lg={12}>
-          <AdminPageSectionContainer title="Active Campaigns">
-            <Row className="w-100">
-              <CampaignCard campaign={campaign} />
-            </Row>
-          </AdminPageSectionContainer>
-        </Col>
-
-      </Row>
-    </AdminLayout>
+    <LoginLayout>
+      <Container fluid>
+        <Row className={styles.homeContainer}>
+            <LoginTop />
+            <LoginSteps />
+        </Row>
+      </Container>
+    </LoginLayout>
   );
 }
-
-export default LoginPage;
