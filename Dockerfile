@@ -9,7 +9,14 @@ COPY prisma ./prisma/
 RUN yarn
 RUN yarn prisma generate
 
-COPY . .
+COPY pages ./pages/
+COPY public ./public/
+COPY src ./src/
+COPY styles ./styles/
+COPY babel.config.js ./
+COPY next-env.d.ts ./
+COPY next.config.js ./
+COPY tsconfig.json ./
 
 RUN yarn next build
 
