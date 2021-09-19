@@ -1,0 +1,49 @@
+.mainContainer {
+    z-index: 20;
+    margin-top: 200px;
+    padding: 0;
+}
+
+.home {
+    height: 50vh;
+}
+
+.textContainer {
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 48px;
+    line-height: 55px;
+    color: #6100FF;
+}
+
+.iconRow {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-auto-rows: minmax(72px, max-content);
+    align-items: center;
+}
+
+.followButton {
+    font-family: Space Grotesk;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    padding: 0px 40px 0px 40px;
+    border-radius: 32px;
+}
+
+.purpleContainer {
+    background-color: #6100FF;
+    margin: 0;
+    padding: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainContainer {
+        margin-top: 100px;
+    }
+}

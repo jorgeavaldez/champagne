@@ -1,0 +1,51 @@
+.icon {
+    font-size: 48px;
+    color: white;
+}
+
+.title {
+    padding: 16px 0px 8px 0px;
+    margin: 0;
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.subtitle {
+    padding: 0;
+    margin: 0;
+    font-family: Nexa Light;
+    font-style: normal;
+    font-weight: light;
+    color: white;
+    padding: 8px 16px 8px 16px;
+}
+
+.card {
+    margin: 8px;
+    min-width: 18rem;
+    width: 30%;
+    flex: 1 0 30%;
+    background-color: #6100FF;
+    flex-grow: unset;
+    border-radius: 20px 0px;
+}
+
+.titleRow {
+    margin: 16px 0px 16px 0px;
+    padding: 0;
+}
+
+.cardContainer {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+    .cardContainer {
+        justify-content: center;
+    }
+}

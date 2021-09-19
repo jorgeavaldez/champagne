@@ -1,0 +1,55 @@
+.sectionContainer {
+    background-color: black;
+    font-family: Nexa Bold;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 32px;
+    width: 70%;
+}
+
+.rightSectionContainer {
+    border-radius: 20px 0px 0px 20px;
+}
+
+.rightContainer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 40px 0px 40px 0px;
+}
+
+.leftContainer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px 0px 40px 0px;
+}
+
+.leftSectionContainer {
+    border-radius: 0px 20px 20px 0px;
+}
+
+.title {
+    text-align: center;
+}
+
+.purpleContainer {
+    background-color: #6100FF;
+    width: max-content;
+}
+
+@media only screen and (max-width: 600px) {
+    .sectionContainer {
+        width: 100%;
+    }
+    .sectionContainer>* {
+        margin: 8px 0px;
+    }
+}
