@@ -19,7 +19,7 @@ export default function WalletLogin() {
     logout();
   };
 
-  if (account.accountId) {
+  if (account?.accountId) {
     router.replace("/wallet/linkdrop/");
   }
 
@@ -28,7 +28,6 @@ export default function WalletLogin() {
       <AdminLayout title="Near Wallet Login">
         <button onClick={onLogin}>Login</button>
         <button onClick={onLogout}>Logout</button>
-        <h1>{ JSON.stringify( account, null, 2 ) }</h1>
       </AdminLayout>
     </Layout>
   );
