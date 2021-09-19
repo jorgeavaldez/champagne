@@ -7,7 +7,7 @@ import styles from './Home.module.css';
 
 export default function Home() {
     return (
-        <Container fluid>
+        <Container fluid className={styles.home}>
             <Row className="justify-content-start align-items-center">
                 <Col lg={1} sm={0}></Col>
                 <Col className={styles.textContainer} lg={6} sm={12}>

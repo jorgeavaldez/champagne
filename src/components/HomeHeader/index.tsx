@@ -3,7 +3,7 @@ import styles from './HomeHeader.module.css';
 
 export default function HomeHeader() {
     return (
-        <Navbar fixed="top" className='px-4 w-100'>
+        <Navbar className={`px-4 w-100 ${styles.nav}`}>
             <Navbar.Brand href="#home" className={styles.logo}>//CHAMPANGE</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">

@@ -1,4 +1,4 @@
-.logo{
+.logo {
     font-family: Hanson;
     font-style: normal;
     font-weight: bold;
@@ -6,9 +6,13 @@
     font-size: 40px;
 }
 
-.navLink{
+.navLink {
     font-family: Space Grotesk;
     font-style: normal;
     font-weight: bold;
     color: white;
+}
+
+.nav {
+    z-index: 20;
 }

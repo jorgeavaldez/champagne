@@ -5,6 +5,7 @@ import Platform from './Platform';
 import HowSection from "../HomeSection/HowSection";
 import Rewards from "./Rewards";
 import WhySection from "../HomeSection/WhySection";
+import Features from './Features';
 import SparkleSection from '../HomeSection/SparkleSection'
 
 import styles from './Home.module.css';
@@ -17,6 +18,7 @@ export default function HomePage() {
             <HowSection />
             <Rewards />
             <WhySection />
+            <Features />
             <SparkleSection />
         </Container>
     )
