@@ -23,7 +23,7 @@
 
   @font-face {
     font-family: "Space Grotesk";
-    src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Bold.tff");
+    src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Bold.ttf");
     font-style: normal;
     font-weight: 700;
     font-display: swap;
@@ -31,7 +31,7 @@
 
   @font-face {
     font-family: "Space Grotesk";
-    src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Light.tff");
+    src: url("/fonts/SpaceGrotesk/SpaceGrotesk-Light.ttf");
     font-style: normal;
     font-weight: 400;
     font-display: swap;
@@ -110,8 +110,8 @@
 
 @media only screen and (max-width: 600px) {
     .fc-toolbar-chunk{
-        justify-content: end;
-        align-items: end;
+        justify-content: flex-end;
+        align-items: flex-end;
         display: flex;
     }
     .fc{
